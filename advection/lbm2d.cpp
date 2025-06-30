@@ -81,6 +81,15 @@ int main()
 
     for (int t = 0; t < steps; ++t)
     {
+        // Progreso
+        if (t % (steps / 100) == 0)
+        {
+            int progress = (100 * t) / steps;
+            std::cout << "\rProgreso: [" << std::string(progress / 2, '=') << std::string(50 - progress / 2, ' ')
+                      << "] " << progress << "%";
+            std::cout.flush();
+        }
+
         // Colisión
         for (int i = 0; i < Nx; ++i)
             for (int j = 0; j < Ny; ++j)
