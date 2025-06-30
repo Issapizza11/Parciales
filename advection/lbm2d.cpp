@@ -5,8 +5,8 @@
 #include <array>
 #include <algorithm>
 
-const int Nx = 1000;
-const int Ny = 1000;
+const int Nx = 500;
+const int Ny = 500;
 const int steps = 10000;
 const double Lx = 1.0, Ly = 1.0;
 const double dx = Lx / Nx;

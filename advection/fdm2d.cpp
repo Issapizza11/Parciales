@@ -6,10 +6,11 @@
 
 const int Nx = 500;
 const int Ny = 500;
-const int steps = 2000;
-const double dx = 0.01;
-const double dy = 0.01;
-const double dt = 0.0005;
+const int steps = 10000;
+const double Lx = 1.0, Ly = 1.0;
+const double dx = Lx / (Nx - 1);
+const double dy = Ly / (Ny - 1);
+const double dt = 0.00001;
 const double alpha_g = 0.01;
 const double alpha_s = 0.005;
 const double u_x = 0.1;
@@ -27,17 +28,41 @@ const double S_value = 315.0;
 
 double S(int i, int j)
 {
-    double x = i * dx;
-    double y = j * dy;
+    // Escalamiento exacto en base al dominio físico
+    double x = static_cast<double>(i) / (Nx - 1) * Lx;
+    double y = static_cast<double>(j) / (Ny - 1) * Ly;
 
-    double S1 = ((x >= 0.2 && x <= 0.3) && (y >= 0.4 && y <= 0.5)) ? S_value : 0.0;
-    double S2 = ((x >= 0.7 && x <= 0.8) && (y >= 0.6 && y <= 0.7)) ? S_value : 0.0;
+    // Evita errores de redondeo usando márgenes suaves
+    double eps = 1e-10;
+
+    double S1 = ((x >= 0.2 - eps && x <= 0.3 + eps) &&
+                 (y >= 0.4 - eps && y <= 0.5 + eps))
+                    ? S_value
+                    : 0.0;
+
+    double S2 = ((x >= 0.7 - eps && x <= 0.8 + eps) &&
+                 (y >= 0.6 - eps && y <= 0.7 + eps))
+                    ? S_value
+                    : 0.0;
 
     return S1 + S2;
 }
 
 int main()
 {
+    int fuente_activa = 0;
+    for (int i = 0; i < Nx; ++i)
+    {
+        for (int j = 0; j < Ny; ++j)
+        {
+            if (S(i, j) > 0.0)
+            {
+                fuente_activa++;
+            }
+        }
+    }
+    std::cout << "Número de celdas con fuente activa: " << fuente_activa << std::endl;
+
     std::vector<std::vector<double>> Tg(Nx, std::vector<double>(Ny, 0.0));
     std::vector<std::vector<double>> Ts(Nx, std::vector<double>(Ny, 0.0));
     std::vector<std::vector<double>> Tg_new = Tg;
@@ -57,6 +82,12 @@ int main()
                                                 (Ts[i][j + 1] - 2 * Ts[i][j] + Ts[i][j - 1]) / (dy * dy));
                 Tg_new[i][j] = Tg[i][j] + dt * (convection_x + convection_y + diffusion_g - hv * (Tg[i][j] - Ts[i][j]) + S(i, j));
                 Ts_new[i][j] = Ts[i][j] + dt * (diffusion_s + hv * (Tg[i][j] - Ts[i][j]));
+
+                if (t % 500 == 0 && i == Nx / 2 && j == Ny / 2)
+                {
+                    std::cout << "Paso " << t << " - Tg centro: " << Tg_new[i][j]
+                              << ", Ts centro: " << Ts_new[i][j] << std::endl;
+                }
             }
         }
 
