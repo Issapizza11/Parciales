@@ -1,0 +1,119 @@
+CON MAYA DE 100X100
+
+# Versión paralela
+perf stat -e cycles,instructions,cache-misses,branch-misses ./lbm_parallel -r
+
+# Versión secuencial
+perf stat -e cycles,instructions,cache-misses,branch-misses ./lbm2d -r
+Usando 8 threads
+Progreso: 99.0%
+Tiempo de ejecución: 1.6 segundos
+Throughput: 62.6 MLUPs (Million Lattice Updates Per Second)
+
+ Performance counter stats for './lbm_parallel -r':
+
+    40,728,878,299      cycles:u                                                           
+    42,756,433,577      instructions:u                   #    1.05  insn per cycle         
+         5,948,092      cache-misses:u                                                     
+         2,158,876      branch-misses:u                                                    
+
+       1.601073233 seconds time elapsed
+
+      12.421121000 seconds user
+       0.069837000 seconds sys
+
+
+Progreso: 99.0%
+Tiempo de ejecución: 6.7 segundos
+Throughput: 14.9 MLUPs (Million Lattice Updates Per Second)
+
+ Performance counter stats for './lbm2d -r':
+
+    17,110,818,342      cycles:u                                                           
+    34,668,769,613      instructions:u                   #    2.03  insn per cycle         
+        48,807,379      cache-misses:u                                                     
+         2,140,351      branch-misses:u                                                    
+
+       6.734579963 seconds time elapsed
+
+       3.952628000 seconds user
+       2.781849000 seconds sys
+
+CON MAYA DE 500X500
+
+# Versión paralela
+perf stat -e cycles,instructions,cache-misses,branch-misses ./lbm_parallel
+
+# Versión secuencial
+perf stat -e cycles,instructions,cache-misses,branch-misses ./lbm2d
+Usando 8 threads
+Progreso: 99.0%
+Tiempo de ejecución: 134.1 segundos
+Simulación 2D LBM completada. Resultados en 'lbm2d_output.csv'.
+
+ Performance counter stats for './lbm_parallel':
+
+ 2,847,488,428,452      cycles:u                                                           
+ 1,089,404,721,576      instructions:u                   #    0.38  insn per cycle         
+     8,691,543,386      cache-misses:u                                                     
+        12,953,480      branch-misses:u                                                    
+
+     134.528189327 seconds time elapsed
+
+    1048.941011000 seconds user
+       6.603878000 seconds sys
+
+
+Progreso: [================================================= ] 99%Simulación 2D LBM completada. Resultados en 'lbm2d_output.csv'.
+
+ Performance counter stats for './lbm2d':
+
+   681,090,347,926      cycles:u                                                           
+   858,473,847,114      instructions:u                   #    1.26  insn per cycle         
+    13,135,251,419      cache-misses:u                                                     
+        28,132,303      branch-misses:u                                                    
+
+     261.132236238 seconds time elapsed
+
+     150.747406000 seconds user
+     110.254219000 seconds sys
+
+CON MAYA DE 800X800
+
+# Versión paralela
+perf stat -e cycles,instructions,cache-misses,branch-misses ./lbm_parallel
+
+# Versión secuencial
+perf stat -e cycles,instructions,cache-misses,branch-misses ./lbm2d
+Usando 8 threads
+Progreso: 99.0%
+Tiempo de ejecución: 283.9 segundos
+Simulación 2D LBM completada. Resultados en 'lbm2d_output.csv'.
+
+ Performance counter stats for './lbm_parallel':
+
+ 6,359,183,655,089      cycles:u                                                           
+ 2,736,646,231,336      instructions:u                   #    0.43  insn per cycle         
+    22,971,752,071      cache-misses:u                                                     
+        20,409,416      branch-misses:u                                                    
+
+     284.975403644 seconds time elapsed
+
+    2231.450999000 seconds user
+       6.946810000 seconds sys
+
+
+Progreso: [================================================= ] 99%
+Simulación 2D LBM completada. Resultados en 'lbm2d_output.csv'.
+
+ Performance counter stats for './lbm2d':
+
+ 1,703,939,917,855      cycles:u                                                           
+ 2,193,072,946,137      instructions:u                   #    1.29  insn per cycle         
+    35,926,880,483      cache-misses:u                                                     
+        63,465,027      branch-misses:u                                                    
+
+     639.385534381 seconds time elapsed
+
+     368.865118000 seconds user
+     270.213866000 seconds sys

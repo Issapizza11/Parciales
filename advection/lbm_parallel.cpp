@@ -4,10 +4,12 @@
 #include <array>
 #include <cmath>
 #include <omp.h>
+#include <cstring>
+#include <iomanip>
 
 // Constantes físicas y parámetros de simulación
-const int Nx = 500;
-const int Ny = 500;
+const int Nx = 100;
+const int Ny = 100;
 const int steps = 10000;
 const double Lx = 1.0;
 const double Ly = 1.0;
@@ -36,43 +38,81 @@ const std::array<int, 9> ex = {0, 1, 0, -1, 0, 1, -1, -1, 1};
 const std::array<int, 9> ey = {0, 0, 1, 0, -1, 1, 1, -1, -1};
 const std::array<double, 9> w = {4. / 9, 1. / 9, 1. / 9, 1. / 9, 1. / 9, 1. / 36, 1. / 36, 1. / 36, 1. / 36};
 
-// Función de equilibrio
-double feq(double T, int k, double ux, double uy)
+const double inv_tau_g = 1.0 / tau_g;
+const double inv_tau_s = 1.0 / tau_s;
+const double inv_cs2 = 1.0 / cs2;
+const double inv_cs2_sq = 1.0 / (cs2 * cs2);
+
+inline double feq(double T, int k, double ux, double uy)
 {
     double eu = ex[k] * ux + ey[k] * uy;
     double uu = ux * ux + uy * uy;
-    return w[k] * T * (1 + eu / cs2 + 0.5 * (eu * eu) / (cs2 * cs2) - 0.5 * uu / cs2);
+    return w[k] * T * (1.0 + eu * inv_cs2 + 0.5 * (eu * eu) * inv_cs2_sq - 0.5 * uu * inv_cs2);
 }
 
-// Término fuente
-double source_term(int i, int j)
+struct SourceMap
 {
-    double x = i * dx;
-    double y = j * dy;
+    std::vector<double> sources;
 
-    double S1 = ((x >= 0.2 && x <= 0.3) && (y >= 0.4 && y <= 0.5)) ? S_value : 0.0;
-    double S2 = ((x >= 0.7 && x <= 0.8) && (y >= 0.6 && y <= 0.7)) ? S_value : 0.0;
+    SourceMap() : sources(Nx * Ny)
+    {
+        for (int i = 0; i < Nx; ++i)
+        {
+            for (int j = 0; j < Ny; ++j)
+            {
+                double x = i * dx;
+                double y = j * dy;
+                double S = ((x >= 0.45 && x <= 0.55) && (y >= 0.45 && y <= 0.55)) ? S_value * dt : 0.0;
+                sources[i * Ny + j] = S;
+            }
+        }
+    }
 
-    return (S1 + S2) * dt;
-}
-
-// Estructura de datos optimizada
-struct LatticeData
-{
-    std::vector<std::array<double, 9>> f;
-    std::vector<std::array<double, 9>> g;
-    std::vector<double> Tg;
-    std::vector<double> Ts;
-
-    LatticeData() : f(Nx * Ny), g(Nx * Ny), Tg(Nx * Ny), Ts(Nx * Ny) {}
+    inline double get(int i, int j) const
+    {
+        return sources[i * Ny + j];
+    }
 };
 
-int main()
+struct LatticeData
 {
-    LatticeData data;
-    LatticeData temp_data;
+    struct Node
+    {
+        double f[9];
+        double g[9];
+        double Tg, Ts;
+    };
 
-// Inicialización
+    std::vector<Node> current;
+    std::vector<Node> next;
+
+    LatticeData() : current(Nx * Ny), next(Nx * Ny) {}
+
+    void swap_buffers()
+    {
+        current.swap(next);
+    }
+};
+
+int main(int argc, char *argv[])
+{
+    bool report_mode = false;
+    if (argc > 1 && (strcmp(argv[1], "-r") == 0 || strcmp(argv[1], "--report") == 0))
+    {
+        report_mode = true;
+    }
+
+    LatticeData data;
+    SourceMap source_map;
+
+    omp_set_num_threads(omp_get_max_threads());
+
+#pragma omp parallel
+    {
+#pragma omp single
+        std::cout << "Usando " << omp_get_num_threads() << " threads\n";
+    }
+
 #pragma omp parallel for collapse(2) schedule(static)
     for (int i = 0; i < Nx; ++i)
     {
@@ -80,107 +120,125 @@ int main()
         {
             int idx = i * Ny + j;
             double T0 = T_in * (1.0 - (i * dx) / Lx);
-            data.Tg[idx] = data.Ts[idx] = T0;
+
+            data.current[idx].Tg = T0;
+            data.current[idx].Ts = T0;
 
             for (int k = 0; k < 9; ++k)
             {
-                data.f[idx][k] = feq(T0, k, u_lb_x, u_lb_y);
-                data.g[idx][k] = feq(T0, k, 0.0, 0.0);
+                data.current[idx].f[k] = feq(T0, k, u_lb_x, u_lb_y);
+                data.current[idx].g[k] = feq(T0, k, 0.0, 0.0);
             }
         }
     }
 
-    // Bucle temporal principal
+    double start_time = omp_get_wtime();
+
     for (int t = 0; t < steps; ++t)
     {
-// Fase de Colisión
 #pragma omp parallel for schedule(static)
-        for (int idx = 0; idx < Nx * Ny; ++idx)
+        for (int i = 0; i < Nx; ++i)
         {
-            double Tgas = 0.0, Tsol = 0.0;
-
-            // Sumamos todas las direcciones
-            for (int k = 0; k < 9; ++k)
+            for (int j = 0; j < Ny; ++j)
             {
-                Tgas += data.f[idx][k];
-                Tsol += data.g[idx][k];
-            }
+                int idx = i * Ny + j;
 
-            data.Tg[idx] = Tgas;
-            data.Ts[idx] = Tsol;
-
-            int i = idx / Ny, j = idx % Ny;
-            double coupling = hv_lb * (Tgas - Tsol);
-            double source = source_term(i, j);
-            double Sg = -coupling + source;
-            double Ss = coupling;
-
-            for (int k = 0; k < 9; ++k)
-            {
-                double feqg = feq(Tgas, k, u_lb_x, u_lb_y);
-                double feqs = feq(Tsol, k, 0.0, 0.0);
-                double Fkg = w[k] * Sg * (1 + (ex[k] * u_lb_x + ey[k] * u_lb_y) / cs2);
-                double Fks = w[k] * Ss;
-
-                data.f[idx][k] = data.f[idx][k] - (data.f[idx][k] - feqg) / tau_g + Fkg;
-                data.g[idx][k] = data.g[idx][k] - (data.g[idx][k] - feqs) / tau_s + Fks;
-            }
-        }
-
-// Fase de Streaming
-#pragma omp parallel for schedule(static)
-        for (int idx = 0; idx < Nx * Ny; ++idx)
-        {
-            int i = idx / Ny, j = idx % Ny;
-            for (int k = 0; k < 9; ++k)
-            {
-                int ni = i - ex[k];
-                int nj = j - ey[k];
-                if (ni >= 0 && ni < Nx && nj >= 0 && nj < Ny)
+                double Tgas = 0.0, Tsol = 0.0;
+                for (int k = 0; k < 9; ++k)
                 {
-                    int src_idx = ni * Ny + nj;
-                    temp_data.f[idx][k] = data.f[src_idx][k];
-                    temp_data.g[idx][k] = data.g[src_idx][k];
+                    Tgas += data.current[idx].f[k];
+                    Tsol += data.current[idx].g[k];
                 }
-                else
+
+                data.current[idx].Tg = Tgas;
+                data.current[idx].Ts = Tsol;
+
+                double coupling = hv_lb * (Tgas - Tsol);
+                double source = source_map.get(i, j);
+                double Sg = -coupling + source;
+                double Ss = coupling;
+
+                for (int k = 0; k < 9; ++k)
                 {
-                    // Condición de rebote (simplificada)
-                    temp_data.f[idx][k] = data.f[idx][k];
-                    temp_data.g[idx][k] = data.g[idx][k];
+                    double feqg = feq(Tgas, k, u_lb_x, u_lb_y);
+                    double feqs = feq(Tsol, k, 0.0, 0.0);
+                    double u_dot_e = ex[k] * u_lb_x + ey[k] * u_lb_y;
+
+                    double Fkg = w[k] * Sg * (1.0 + u_dot_e * inv_cs2);
+                    double Fks = w[k] * Ss;
+
+                    double f_new = data.current[idx].f[k] - (data.current[idx].f[k] - feqg) * inv_tau_g + Fkg;
+                    double g_new = data.current[idx].g[k] - (data.current[idx].g[k] - feqs) * inv_tau_s + Fks;
+
+                    int ni = i + ex[k];
+                    int nj = j + ey[k];
+
+                    if (ni >= 0 && ni < Nx && nj >= 0 && nj < Ny)
+                    {
+                        int dst_idx = ni * Ny + nj;
+                        data.next[dst_idx].f[k] = f_new;
+                        data.next[dst_idx].g[k] = g_new;
+                    }
+                    else
+                    {
+                        data.next[idx].f[k] = f_new;
+                        data.next[idx].g[k] = g_new;
+                    }
                 }
             }
         }
-        std::swap(data.f, temp_data.f);
-        std::swap(data.g, temp_data.g);
 
-// Condiciones de frontera
-#pragma omp parallel for schedule(static)
+        data.swap_buffers();
+
+#pragma omp parallel for
         for (int j = 0; j < Ny; ++j)
         {
-            int idx = j; // i=0
+            int idx = j;
             for (int k = 0; k < 9; ++k)
             {
                 if (ex[k] > 0)
-                {
-                    data.f[idx][k] = feq(T_in, k, u_lb_x, u_lb_y);
-                }
-                data.g[idx][k] = feq(T_in, k, 0.0, 0.0);
+                    data.current[idx].f[k] = feq(T_in, k, u_lb_x, u_lb_y);
+                data.current[idx].g[k] = feq(T_in, k, 0.0, 0.0);
+            }
+        }
+
+        if (t % (steps / 100) == 0)
+        {
+#pragma omp master
+            {
+                double progress = 100.0 * t / steps;
+                std::cout << "\rProgreso: " << std::fixed << std::setprecision(1)
+                          << progress << "%" << std::flush;
             }
         }
     }
 
-    // Escritura de resultados
-    std::ofstream file("lbm2d_output.csv");
-    file << "x,y,Tg,Ts\n";
-    for (int i = 0; i < Nx; ++i)
+    double end_time = omp_get_wtime();
+    double total_time = end_time - start_time;
+
+    std::cout << "\nTiempo de ejecución: " << total_time << " segundos\n";
+
+    const double throughput = (static_cast<double>(Nx) * Ny * steps) / total_time / 1e6;
+    std::cout << "Throughput: " << throughput << " MLUPs (Million Lattice Updates Per Second)\n";
+
+    if (!report_mode)
     {
-        for (int j = 0; j < Ny; ++j)
+        std::ofstream file("lbm2d_output.csv");
+        file << "x,y,Tg,Ts\n";
+        file.precision(10);
+
+        for (int i = 0; i < Nx; ++i)
         {
-            int idx = i * Ny + j;
-            file << i * dx << "," << j * dy << "," << data.Tg[idx] << "," << data.Ts[idx] << "\n";
+            for (int j = 0; j < Ny; ++j)
+            {
+                int idx = i * Ny + j;
+                file << i * dx << "," << j * dy << ","
+                     << data.current[idx].Tg << "," << data.current[idx].Ts << "\n";
+            }
         }
+
+        std::cout << "Simulación 2D LBM completada. Resultados en 'lbm2d_output.csv'.\n";
     }
 
-    std::cout << "Simulación 2D LBM completada. Resultados en 'lbm2d_output.csv'.\n";
     return 0;
 }

@@ -4,16 +4,19 @@
 #include <cmath>
 #include <array>
 #include <algorithm>
+#include <omp.h>
+#include <iomanip>
+#include <cstring> // Para strcmp
 
-const int Nx = 500;
-const int Ny = 500;
+const int Nx = 100;
+const int Ny = 100;
 const int steps = 10000;
 const double Lx = 1.0, Ly = 1.0;
 const double dx = Lx / Nx;
 const double dy = Ly / Ny;
 const double dt = 0.0001;
 
-const double alpha_g = 0.01, alpha_s = 0.005; // ¿Hay que cambiarlo?
+const double alpha_g = 0.01, alpha_s = 0.005;
 const double u_phys_x = 0.1;
 const double u_phys_y = 0.05;
 const double hv_phys = 5.0;
@@ -32,7 +35,6 @@ std::array<int, 9> ex = {0, 1, 0, -1, 0, 1, -1, -1, 1};
 std::array<int, 9> ey = {0, 0, 1, 0, -1, 1, 1, -1, -1};
 std::array<double, 9> w = {4. / 9, 1. / 9, 1. / 9, 1. / 9, 1. / 9, 1. / 36, 1. / 36, 1. / 36, 1. / 36};
 
-// Equilibrio con velocidades en x e y
 double feq(double T, int k, double ux, double uy)
 {
     double eu = ex[k] * ux + ey[k] * uy;
@@ -40,27 +42,24 @@ double feq(double T, int k, double ux, double uy)
     return w[k] * T * (1 + eu / cs2 + 0.5 * (eu * eu) / (cs2 * cs2) - 0.5 * uu / cs2);
 }
 
-// Fuente localizada
-// double source_term(int i, int j)
-// {
-//     double x = i * dx;
-//     double y = j * dy;
-//     return (x >= 0.1 && x <= 0.3 && y >= 0.4 && y <= 0.6) ? S_value * dt : 0.0;
-// }
-
 double source_term(int i, int j)
 {
     double x = i * dx;
     double y = j * dy;
 
-    double S1 = ((x >= 0.2 && x <= 0.3) && (y >= 0.4 && y <= 0.5)) ? S_value : 0.0;
-    double S2 = ((x >= 0.7 && x <= 0.8) && (y >= 0.6 && y <= 0.7)) ? S_value : 0.0;
+    double S = ((x >= 0.45 && x <= 0.55) && (y >= 0.45 && y <= 0.55)) ? S_value * dt : 0.0;
 
-    return (S1 + S2) * dt;
+    return S;
 }
 
-int main()
+int main(int argc, char *argv[])
 {
+    bool report_mode = false;
+    if (argc > 1 && (strcmp(argv[1], "-r") == 0 || strcmp(argv[1], "--report") == 0))
+    {
+        report_mode = true;
+    }
+
     std::vector<std::vector<std::array<double, 9>>> f(Nx, std::vector<std::array<double, 9>>(Ny));
     std::vector<std::vector<std::array<double, 9>>> g = f;
     std::vector<std::vector<double>> Tg(Nx, std::vector<double>(Ny));
@@ -79,15 +78,15 @@ int main()
             }
         }
 
+    double start_time = omp_get_wtime();
+
     for (int t = 0; t < steps; ++t)
     {
-        // Progreso
         if (t % (steps / 100) == 0)
         {
-            int progress = (100 * t) / steps;
-            std::cout << "\rProgreso: [" << std::string(progress / 2, '=') << std::string(50 - progress / 2, ' ')
-                      << "] " << progress << "%";
-            std::cout.flush();
+            double progress = 100.0 * t / steps;
+            std::cout << "\rProgreso: " << std::fixed << std::setprecision(1)
+                      << progress << "%" << std::flush;
         }
 
         // Colisión
@@ -147,12 +146,23 @@ int main()
         }
     }
 
-    std::ofstream file("lbm2d_output.csv");
-    file << "x,y,Tg,Ts\n";
-    for (int i = 0; i < Nx; ++i)
-        for (int j = 0; j < Ny; ++j)
-            file << i * dx << "," << j * dy << "," << Tg[i][j] << "," << Ts[i][j] << "\n";
+    double end_time = omp_get_wtime();
+    double total_time = end_time - start_time;
+    std::cout << "\nTiempo de ejecución: " << total_time << " segundos\n";
 
-    std::cout << "Simulación 2D LBM completada. Resultados en 'lbm2d_output.csv'.\n";
+    const double throughput = (static_cast<double>(Nx) * Ny * steps) / total_time / 1e6;
+    std::cout << "Throughput: " << throughput << " MLUPs (Million Lattice Updates Per Second)\n";
+
+    if (!report_mode)
+    {
+        std::ofstream file("lbm2d_output.csv");
+        file << "x,y,Tg,Ts\n";
+        for (int i = 0; i < Nx; ++i)
+            for (int j = 0; j < Ny; ++j)
+                file << i * dx << "," << j * dy << "," << Tg[i][j] << "," << Ts[i][j] << "\n";
+
+        std::cout << "Simulación 2D LBM completada. Resultados en 'lbm2d_output.csv'.\n";
+    }
+
     return 0;
 }
