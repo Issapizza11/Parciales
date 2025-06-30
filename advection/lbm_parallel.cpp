@@ -6,8 +6,8 @@
 #include <omp.h>
 
 // Constantes físicas y parámetros de simulación
-const int Nx = 500;
-const int Ny = 500;
+const int Nx = 1000;
+const int Ny = 1000;
 const int steps = 10000;
 const double Lx = 1.0;
 const double Ly = 1.0;
