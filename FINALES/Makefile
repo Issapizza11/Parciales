@@ -1,7 +1,7 @@
 # Makefile
 
 CXX = g++
-CXXFLAGS = -std= c++11 -O3 -march=native -fopenmp -ffast-math
+CXXFLAGS = -std=c++11 -O3 -march=native -fopenmp -ffast-math
 SOURCES = fdtd2D_p.cpp lbm_parallel.cpp
 BIN_FDTD = fdtd2D_p
 BIN_LBM = lbm_parallel
