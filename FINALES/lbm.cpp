@@ -9,13 +9,12 @@
 #include <cstring>
 
 // Parámetros de simulación
-const int Nx = 200;
-const int Ny = 200;
+int Nx = 200;
+int Ny = 200;
 const int steps = 10000;
 
 const double Lx = 1.0, Ly = 1.0;
-const double dx = Lx / Nx;
-const double dy = Ly / Ny;
+double dx, dy;
 const double dt = 0.0001;
 
 const double alpha_g = 0.01, alpha_s = 0.005;
@@ -102,10 +101,26 @@ struct LatticeData
 int main(int argc, char *argv[])
 {
     bool report_mode = false;
-    if (argc > 1 && (strcmp(argv[1], "-r") == 0 || strcmp(argv[1], "--report") == 0))
+    int malla_size = -1;
+
+    for (int i = 1; i < argc; ++i)
     {
-        report_mode = true;
+        if (strcmp(argv[i], "-r") == 0 || strcmp(argv[i], "--report") == 0)
+            report_mode = true;
+        else if ((strcmp(argv[i], "-m") == 0 || strcmp(argv[i], "--malla") == 0) && i + 1 < argc)
+            malla_size = std::stoi(argv[++i]);
     }
+
+    if (malla_size > 0)
+    {
+        Nx = malla_size;
+        Ny = malla_size;
+
+        dx = Lx / Nx;
+        dy = Ly / Ny;
+    }
+
+    std::cout << "Usando " << omp_get_max_threads() << " hilos\n";
 
     LatticeData data;
     SourceMap source_map;

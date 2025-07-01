@@ -9,13 +9,12 @@
 #include <cstring>
 
 // Parámetros de simulación
-const int Nx = 200;
-const int Ny = 200;
+int Nx = 200;
+int Ny = 200;
 const int steps = 10000;
 
 const double Lx = 1.0, Ly = 1.0;
-const double dx = Lx / Nx;
-const double dy = Ly / Ny;
+double dx, dy;
 const double dt = 0.0001;
 
 const double alpha_g = 0.01, alpha_s = 0.005;
@@ -100,8 +99,50 @@ struct LatticeData
 int main(int argc, char *argv[])
 {
     bool report_mode = false;
-    if (argc > 1 && (strcmp(argv[1], "-r") == 0 || strcmp(argv[1], "--report") == 0))
-        report_mode = true;
+    int malla_size = -1;
+    int num_threads = -1;
+
+    for (int i = 1; i < argc; ++i)
+    {
+        if (strcmp(argv[i], "-r") == 0 || strcmp(argv[i], "--report") == 0)
+        {
+            report_mode = true;
+        }
+        else if ((strcmp(argv[i], "-m") == 0 || strcmp(argv[i], "--malla") == 0) && i + 1 < argc)
+        {
+            malla_size = std::stoi(argv[++i]);
+        }
+        else if ((strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--hilos") == 0) && i + 1 < argc)
+        {
+            num_threads = std::stoi(argv[++i]);
+        }
+    }
+
+    // Aplicar la malla si fue proporcionada
+    if (malla_size > 0)
+    {
+        Nx = malla_size;
+        Ny = malla_size;
+    }
+
+    // Calcular dx, dy dinámicamente
+    dx = Lx / Nx;
+    dy = Ly / Ny;
+
+    // Aplicar cantidad de hilos si fue especificada
+    if (num_threads > 0)
+    {
+        omp_set_num_threads(num_threads);
+    }
+
+#pragma omp parallel
+    {
+#pragma omp single
+        {
+            std::cout << "Se están usando " << omp_get_num_threads() << " hilos.\n";
+        }
+    }
+    std::cout << "Resolución de malla: " << Nx << " x " << Ny << "\n";
 
     LatticeData data;
     SourceMap source_map;
