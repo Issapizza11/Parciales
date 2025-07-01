@@ -44,7 +44,7 @@ benchmark:
 	total=$(if $(TOTAL),$(TOTAL),10); \
 	for bin in $(BIN_LBM) $(BIN_FDTD); do \
 		if [ "$$bin" = "$(BIN_LBM)" ]; then \
-			mallas="100 500 1000 1500"; \
+			mallas="10"; \
 		else \
 			mallas="500 2500 5000 7500"; \
 		fi; \
