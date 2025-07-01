@@ -3,11 +3,11 @@
 #include <cmath>
 #include <fstream>
 #include <chrono>
-#include <filesystem>
 #include <sstream>
 #include <iomanip>
 #include <omp.h>
 #include <cstring>
+#include <sys/stat.h> // Para mkdir
 
 // Constantes físicas
 const double epsilon0 = 8.854187817e-12;
@@ -16,11 +16,22 @@ const double c = 1.0 / std::sqrt(epsilon0 * mu0);
 
 using CampoPlano = std::vector<double>;
 
+// Crear directorio si no existe (estilo POSIX)
+void crearDirectorioSiNoExiste(const std::string &nombre)
+{
+    struct stat st;
+    if (stat(nombre.c_str(), &st) != 0)
+    {
+        mkdir(nombre.c_str(), 0755);
+    }
+}
+
 void guardarCampos2D(const CampoPlano &Ex, const CampoPlano &Ey, const CampoPlano &Hz,
                      int Nx, int Ny, int paso, const std::string &subcarpeta)
 {
     const std::string carpeta_principal = "data2D";
-    std::filesystem::create_directories(carpeta_principal + "/" + subcarpeta);
+    crearDirectorioSiNoExiste(carpeta_principal);
+    crearDirectorioSiNoExiste(carpeta_principal + "/" + subcarpeta);
 
     std::ostringstream nombre;
     nombre << carpeta_principal << "/" << subcarpeta << "/campos_t"
@@ -197,7 +208,6 @@ int main(int argc, char *argv[])
     double dx = lambda / 20.0, dy = lambda / 20.0;
     double courantFactor = 0.3;
 
-    // Procesar banderas
     for (int i = 1; i < argc; ++i)
     {
         if (strcmp(argv[i], "-r") == 0 || strcmp(argv[i], "--report") == 0)
@@ -228,19 +238,18 @@ int main(int argc, char *argv[])
     dy = lambda / 20.0;
 
     if (!report_mode)
-        std::filesystem::create_directory("data2D");
+        crearDirectorioSiNoExiste("data2D");
+
 #pragma omp parallel sections
     {
 #pragma omp section
         {
-            // Simulación gaussiana
             FDTD2D fdtd_gauss(Nx, Ny, dx, dy, courantFactor);
             fdtd_gauss.setGaussianPulse(Nx / 4 * dx, Ny / 4 * dy, lambda / 4);
             ejecutarSimulacion2D(fdtd_gauss, "gaussiano", "gaussiano", report_mode);
         }
 #pragma omp section
         {
-            // Simulación sinusoidal
             FDTD2D fdtd_sin(Nx, Ny, dx, dy, courantFactor);
             fdtd_sin.setSinusoidalPulse();
             ejecutarSimulacion2D(fdtd_sin, "senosoidal", "senosoidal", report_mode);
