@@ -48,53 +48,80 @@ def load_data_3d(file_pattern, max_frames=None):
     
     return X, Y, all_frames, files
 
-def save_3d_animation(X, Y, frames, field='Hz', elev=30, azim=45, interval=100, output_file="animacion_3d.mp4"):
-    """Guarda una animación 3D en un archivo .mp4"""
+def interactive_3d_animation(X, Y, frames, field='Hz', elev=30, azim=45, interval=100):
+    """Muestra una animación 3D interactiva"""
     fig = plt.figure(figsize=(12, 8))
     ax = fig.add_subplot(111, projection='3d')
-
+    
+    # Configurar límites iniciales
     Ex0, Ey0, Hz0 = frames[0]
-    Z = {'Ex': Ex0, 'Ey': Ey0, 'Hz': Hz0}[field]
-
+    if field == 'Ex':
+        Z = Ex0
+    elif field == 'Ey':
+        Z = Ey0
+    else:  # 'Hz'
+        Z = Hz0
+    
+    # Normalizar para mejor visualización
     max_val = np.max(np.abs(Z))
     if max_val > 0:
         Z = Z / max_val
-
-    surf = [ax.plot_surface(X, Y, Z, cmap=cm.coolwarm,
-                            linewidth=0, antialiased=True,
-                            rstride=1, cstride=1, alpha=0.8)]
-
+    
+    # Crear superficie inicial
+    surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm,
+                         linewidth=0, antialiased=True,
+                         rstride=1, cstride=1, alpha=0.8)
+    
+    # Configuración de la vista
     ax.view_init(elev=elev, azim=azim)
     ax.set_xlabel('Posición X')
     ax.set_ylabel('Posición Y')
     ax.set_zlabel(f'Intensidad de {field}')
     ax.set_title(f'Propagación 3D del campo {field} - Paso 0/{len(frames)}')
     ax.set_zlim(-1, 1)
-
+    
+    # Barra de color
+    mappable = cm.ScalarMappable(cmap=cm.coolwarm)
+    mappable.set_array(Z)
+    fig.colorbar(mappable, ax=ax, shrink=0.5, aspect=5, label='Intensidad normalizada')
+    
+    # Función de actualización
     def update(frame_num):
         ax.clear()
         Ex, Ey, Hz = frames[frame_num]
-        Z = {'Ex': Ex, 'Ey': Ey, 'Hz': Hz}[field]
+        
+        if field == 'Ex':
+            Z = Ex
+        elif field == 'Ey':
+            Z = Ey
+        else:  # 'Hz'
+            Z = Hz
+        
+        # Normalizar
         max_val = np.max(np.abs(Z))
         if max_val > 0:
             Z = Z / max_val
-
-        ax.plot_surface(X, Y, Z, cmap=cm.coolwarm,
-                        linewidth=0, antialiased=True,
-                        rstride=1, cstride=1, alpha=0.8)
+        
+        surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm,
+                             linewidth=0, antialiased=True,
+                             rstride=1, cstride=1, alpha=0.8)
+        
         ax.set_zlim(-1, 1)
         ax.view_init(elev=elev, azim=azim)
         ax.set_xlabel('Posición X')
         ax.set_ylabel('Posición Y')
         ax.set_zlabel(f'Intensidad de {field}')
-        ax.set_title(f'Propagación 3D del campo {field} - Paso {frame_num + 1}/{len(frames)}')
-
+        ax.set_title(f'Propagación 3D del campo {field} - Paso {frame_num+1}/{len(frames)}')
+        
+        return surf,
+    
+    # Crear animación interactiva
     anim = FuncAnimation(fig, update, frames=len(frames), interval=interval, blit=False)
-
-    # Guardar como .mp4 (necesita ffmpeg instalado)
-    print(f"Guardando animación en {output_file}...")
-    anim.save(output_file, writer='ffmpeg', fps=1000 // interval)
-    print("Animación guardada correctamente.")
+    
+    plt.tight_layout()
+    plt.show()
+    
+    return anim
 
 def main():
     parser = argparse.ArgumentParser(description='Visualización 3D interactiva de simulaciones FDTD 2D')
@@ -122,13 +149,11 @@ def main():
         print("Mostrando animación... Puedes interactuar con la vista 3D durante la reproducción")
         
         # Mostrar animación interactiva
-        anim = save_3d_animation(X, Y, frames,
-                  field=args.campo,
-                  elev=args.elevacion,
-                  azim=args.azimut,
-                  interval=args.intervalo,
-                  output_file=f"{args.tipo}_{args.campo}.mp4")
-
+        anim = interactive_3d_animation(X, Y, frames, 
+                                      field=args.campo,
+                                      elev=args.elevacion,
+                                      azim=args.azimut,
+                                      interval=args.intervalo)
     except Exception as e:
         print(f"Error: {e}")
         print("Verifica que:")
