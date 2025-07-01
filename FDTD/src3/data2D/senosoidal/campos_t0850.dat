@@ -1,7 +1,7 @@
 0 0 0 0 0
 0 1 0 0 -inf
 0 2 0 0 inf
-0 3 0 0 -inf
+0 3 0 0 -nan
 0 4 0 0 -nan
 0 5 0 0 -nan
 0 6 0 0 -nan
@@ -23,7 +23,7 @@
 0 22 0 0 -nan
 0 23 0 0 -nan
 0 24 0 0 -nan
-0 25 0 0 -nan
+0 25 -0 -0 -nan
 0 26 -0 -0 -nan
 0 27 -0 -0 -nan
 0 28 -0 -0 -nan
@@ -48,7 +48,7 @@
 0 47 -0 -0 -nan
 0 48 -0 -0 -nan
 0 49 -0 -0 -nan
-0 50 -0 -0 -nan
+0 50 0 0 -nan
 0 51 0 0 -nan
 0 52 0 0 -nan
 0 53 0 0 -nan
@@ -98,7 +98,7 @@
 0 97 -0 -0 -nan
 0 98 -0 -0 -nan
 0 99 -0 -0 -nan
-0 100 -0 -0 -nan
+0 100 0 0 -nan
 0 101 0 0 -nan
 0 102 0 0 -nan
 0 103 0 0 -nan
@@ -123,7 +123,7 @@
 0 122 0 0 -nan
 0 123 0 0 -nan
 0 124 0 0 -nan
-0 125 0 0 -nan
+0 125 -0 -0 -nan
 0 126 -0 -0 -nan
 0 127 -0 -0 -nan
 0 128 -0 -0 -nan
@@ -173,7 +173,7 @@
 0 172 0 0 -nan
 0 173 0 0 -nan
 0 174 0 0 -nan
-0 175 0 0 -nan
+0 175 -0 -0 -nan
 0 176 -0 -0 -nan
 0 177 -0 -0 -nan
 0 178 -0 -0 -nan
@@ -189,7 +189,7 @@
 0 188 -0 -0 -nan
 0 189 -0 -0 -nan
 0 190 -0 -0 -nan
-0 191 -0 -0 inf
+0 191 -0 -0 -nan
 0 192 -0 -0 -inf
 0 193 -0 -0 inf
 0 194 -0 -0 -inf
@@ -200,9 +200,9 @@
 0 199 -0 -0 -0
 
 1 0 0 0 -inf
-1 1 inf -inf inf
+1 1 inf -inf -nan
 1 2 -inf inf -nan
-1 3 inf -inf -nan
+1 3 -nan -nan -nan
 1 4 -nan -nan -nan
 1 5 -nan -nan -nan
 1 6 -nan -nan -nan
@@ -390,8 +390,8 @@
 1 188 -nan -nan -nan
 1 189 -nan -nan -nan
 1 190 -nan -nan -nan
-1 191 -nan inf -nan
-1 192 inf -inf inf
+1 191 -nan -nan -nan
+1 192 -nan -inf -nan
 1 193 -inf inf -inf
 1 194 inf -inf inf
 1 195 -inf inf -inf
@@ -400,8 +400,8 @@
 1 198 inf -inf inf
 1 199 -0.00157084 -0.00157084 -0.00157084
 
-2 0 0 0 inf
-2 1 -inf inf -nan
+2 0 0 0 -nan
+2 1 -nan -nan -nan
 2 2 -nan -nan -nan
 2 3 -nan -nan -nan
 2 4 -nan -nan -nan
@@ -591,9 +591,9 @@
 2 188 -nan -nan -nan
 2 189 -nan -nan -nan
 2 190 -nan -nan -nan
-2 191 -nan -inf -nan
-2 192 -inf inf -inf
-2 193 inf -inf inf
+2 191 -nan -nan -nan
+2 192 -nan -nan -nan
+2 193 -nan -inf -nan
 2 194 -inf inf -inf
 2 195 inf -inf inf
 2 196 -inf inf -inf
@@ -793,9 +793,9 @@
 3 189 -nan -nan -nan
 3 190 -nan -nan -nan
 3 191 -nan -nan -nan
-3 192 -nan -inf -nan
-3 193 -inf inf -inf
-3 194 inf -inf inf
+3 192 -nan -nan -nan
+3 193 -nan -nan -nan
+3 194 -nan -inf -nan
 3 195 -inf inf -inf
 3 196 inf -inf inf
 3 197 -inf inf -inf
@@ -994,9 +994,9 @@
 4 189 -nan -nan -nan
 4 190 -nan -nan -nan
 4 191 -nan -nan -nan
-4 192 -nan inf -nan
-4 193 inf -inf inf
-4 194 -inf inf -inf
+4 192 -nan -nan -nan
+4 193 -nan -nan -nan
+4 194 -nan inf -nan
 4 195 inf -inf inf
 4 196 -inf inf -inf
 4 197 inf -inf inf
@@ -1195,10 +1195,10 @@
 5 189 -nan -nan -nan
 5 190 -nan -nan -nan
 5 191 -nan -nan -nan
-5 192 -nan -inf -nan
-5 193 -inf inf -inf
-5 194 inf -inf inf
-5 195 -inf inf -inf
+5 192 -nan -nan -nan
+5 193 -nan -nan -nan
+5 194 -nan -nan -nan
+5 195 -nan inf -nan
 5 196 inf -inf inf
 5 197 -inf inf -inf
 5 198 inf -inf inf
@@ -1396,10 +1396,10 @@
 6 189 -nan -nan -nan
 6 190 -nan -nan -nan
 6 191 -nan -nan -nan
-6 192 -nan inf -nan
-6 193 inf -inf inf
-6 194 -inf inf -inf
-6 195 inf -inf inf
+6 192 -nan -nan -nan
+6 193 -nan -nan -nan
+6 194 -nan -nan -nan
+6 195 -nan -inf -nan
 6 196 -inf inf -inf
 6 197 inf -inf inf
 6 198 -inf inf -inf
@@ -1598,9 +1598,9 @@
 7 190 -nan -nan -nan
 7 191 -nan -nan -nan
 7 192 -nan -nan -nan
-7 193 -nan inf -nan
-7 194 inf -inf inf
-7 195 -inf inf -inf
+7 193 -nan -nan -nan
+7 194 -nan -nan -nan
+7 195 -nan inf -nan
 7 196 inf -inf inf
 7 197 -inf inf -inf
 7 198 inf -inf inf
@@ -1799,10 +1799,10 @@
 8 190 -nan -nan -nan
 8 191 -nan -nan -nan
 8 192 -nan -nan -nan
-8 193 -nan -inf -nan
-8 194 -inf inf -inf
-8 195 inf -inf inf
-8 196 -inf inf -inf
+8 193 -nan -nan -nan
+8 194 -nan -nan -nan
+8 195 -nan -nan -nan
+8 196 -nan inf -nan
 8 197 inf -inf inf
 8 198 -inf inf -inf
 8 199 -0.0105822 -0.0105822 -0.0105822
@@ -2000,10 +2000,10 @@
 9 190 -nan -nan -nan
 9 191 -nan -nan -nan
 9 192 -nan -nan -nan
-9 193 -nan inf -nan
-9 194 inf -inf inf
-9 195 -inf inf -inf
-9 196 inf -inf inf
+9 193 -nan -nan -nan
+9 194 -nan -nan -nan
+9 195 -nan -nan -nan
+9 196 -nan -inf -nan
 9 197 -inf inf -inf
 9 198 inf -inf inf
 9 199 -0.0113405 -0.0113405 -0.0113405
@@ -2201,10 +2201,10 @@
 10 190 -nan -nan -nan
 10 191 -nan -nan -nan
 10 192 -nan -nan -nan
-10 193 -nan -inf -nan
-10 194 -inf inf -inf
-10 195 inf -inf inf
-10 196 -inf inf -inf
+10 193 -nan -nan -nan
+10 194 -nan -nan -nan
+10 195 -nan -nan -nan
+10 196 -nan inf -nan
 10 197 inf -inf inf
 10 198 -inf inf -inf
 10 199 -0.0119199 -0.0119199 -0.0119199
@@ -2402,11 +2402,11 @@
 11 190 -nan -nan -nan
 11 191 -nan -nan -nan
 11 192 -nan -nan -nan
-11 193 -nan inf -nan
-11 194 inf -inf inf
-11 195 -inf inf -inf
-11 196 inf -inf inf
-11 197 -inf inf -inf
+11 193 -nan -nan -nan
+11 194 -nan -nan -nan
+11 195 -nan -nan -nan
+11 196 -nan -nan -nan
+11 197 -nan inf -nan
 11 198 inf -inf inf
 11 199 -0.0123113 -0.0123113 -0.0123113
 
@@ -2603,11 +2603,11 @@
 12 190 -nan -nan -nan
 12 191 -nan -nan -nan
 12 192 -nan -nan -nan
-12 193 -nan -inf -nan
-12 194 -inf inf -inf
-12 195 inf -inf inf
-12 196 -inf inf -inf
-12 197 inf -inf inf
+12 193 -nan -nan -nan
+12 194 -nan -nan -nan
+12 195 -nan -nan -nan
+12 196 -nan -nan -nan
+12 197 -nan -inf -nan
 12 198 -inf inf -inf
 12 199 -0.0125086 -0.0125086 -0.0125086
 
@@ -2804,11 +2804,11 @@
 13 190 -nan -nan -nan
 13 191 -nan -nan -nan
 13 192 -nan -nan -nan
-13 193 -nan inf -nan
-13 194 inf -inf inf
-13 195 -inf inf -inf
-13 196 inf -inf inf
-13 197 -inf inf -inf
+13 193 -nan -nan -nan
+13 194 -nan -nan -nan
+13 195 -nan -nan -nan
+13 196 -nan -nan -nan
+13 197 -nan inf -nan
 13 198 inf -inf inf
 13 199 -0.0125086 -0.0125086 -0.0125086
 
@@ -3006,11 +3006,11 @@
 14 191 -nan -nan -nan
 14 192 -nan -nan -nan
 14 193 -nan -nan -nan
-14 194 -nan inf -nan
-14 195 inf -inf inf
-14 196 -inf inf -inf
-14 197 inf -inf inf
-14 198 -inf inf -inf
+14 194 -nan -nan -nan
+14 195 -nan -nan -nan
+14 196 -nan -nan -nan
+14 197 -nan -nan -nan
+14 198 -nan inf -nan
 14 199 -0.0123113 -0.0123113 -0.0123113
 
 15 0 0 0 -nan
@@ -3207,11 +3207,11 @@
 15 191 -nan -nan -nan
 15 192 -nan -nan -nan
 15 193 -nan -nan -nan
-15 194 -nan -inf -nan
-15 195 -inf inf -inf
-15 196 inf -inf inf
-15 197 -inf inf -inf
-15 198 inf -inf inf
+15 194 -nan -nan -nan
+15 195 -nan -nan -nan
+15 196 -nan -nan -nan
+15 197 -nan -nan -nan
+15 198 -nan -inf -nan
 15 199 -0.0119199 -0.0119199 -0.0119199
 
 16 0 0 0 -nan
@@ -3408,11 +3408,11 @@
 16 191 -nan -nan -nan
 16 192 -nan -nan -nan
 16 193 -nan -nan -nan
-16 194 -nan inf -nan
-16 195 inf -inf inf
-16 196 -inf inf -inf
-16 197 inf -inf inf
-16 198 -inf inf -inf
+16 194 -nan -nan -nan
+16 195 -nan -nan -nan
+16 196 -nan -nan -nan
+16 197 -nan -nan -nan
+16 198 -nan inf -nan
 16 199 -0.0113405 -0.0113405 -0.0113405
 
 17 0 0 0 -nan
@@ -3609,11 +3609,11 @@
 17 191 -nan -nan -nan
 17 192 -nan -nan -nan
 17 193 -nan -nan -nan
-17 194 -nan -inf -nan
-17 195 -inf inf -inf
-17 196 inf -inf inf
-17 197 -inf inf -inf
-17 198 inf -inf inf
+17 194 -nan -nan -nan
+17 195 -nan -nan -nan
+17 196 -nan -nan -nan
+17 197 -nan -nan -nan
+17 198 -nan -nan -nan
 17 199 -0.0105822 -0.0105822 -0.0105822
 
 18 0 0 0 -nan
@@ -3810,11 +3810,11 @@
 18 191 -nan -nan -nan
 18 192 -nan -nan -nan
 18 193 -nan -nan -nan
-18 194 -nan inf -nan
-18 195 inf -inf inf
-18 196 -inf inf -inf
-18 197 inf -inf inf
-18 198 -inf inf -inf
+18 194 -nan -nan -nan
+18 195 -nan -nan -nan
+18 196 -nan -nan -nan
+18 197 -nan -nan -nan
+18 198 -nan -nan -nan
 18 199 -0.00965709 -0.00965709 -0.00965709
 
 19 0 0 0 -nan
@@ -4011,11 +4011,11 @@
 19 191 -nan -nan -nan
 19 192 -nan -nan -nan
 19 193 -nan -nan -nan
-19 194 -nan -inf -nan
-19 195 -inf inf -inf
-19 196 inf -inf inf
-19 197 -inf inf -inf
-19 198 inf -inf inf
+19 194 -nan -nan -nan
+19 195 -nan -nan -nan
+19 196 -nan -nan -nan
+19 197 -nan -nan -nan
+19 198 -nan -nan -nan
 19 199 -0.00857965 -0.00857965 -0.00857965
 
 20 0 0 0 -nan
@@ -4213,10 +4213,10 @@
 20 192 -nan -nan -nan
 20 193 -nan -nan -nan
 20 194 -nan -nan -nan
-20 195 -nan -inf -nan
-20 196 -inf inf -inf
-20 197 inf -inf inf
-20 198 -inf inf -inf
+20 195 -nan -nan -nan
+20 196 -nan -nan -nan
+20 197 -nan -nan -nan
+20 198 -nan -nan -nan
 20 199 -0.0073669 -0.0073669 -0.0073669
 
 21 0 0 0 -nan
@@ -4414,10 +4414,10 @@
 21 192 -nan -nan -nan
 21 193 -nan -nan -nan
 21 194 -nan -nan -nan
-21 195 -nan inf -nan
-21 196 inf -inf inf
-21 197 -inf inf -inf
-21 198 inf -inf inf
+21 195 -nan -nan -nan
+21 196 -nan -nan -nan
+21 197 -nan -nan -nan
+21 198 -nan -nan -nan
 21 199 -0.00603797 -0.00603797 -0.00603797
 
 22 0 0 0 -nan
@@ -4615,10 +4615,10 @@
 22 192 -nan -nan -nan
 22 193 -nan -nan -nan
 22 194 -nan -nan -nan
-22 195 -nan -inf -nan
-22 196 -inf inf -inf
-22 197 inf -inf inf
-22 198 -inf inf -inf
+22 195 -nan -nan -nan
+22 196 -nan -nan -nan
+22 197 -nan -nan -nan
+22 198 -nan -nan -nan
 22 199 -0.00461382 -0.00461382 -0.00461382
 
 23 0 0 0 -nan
@@ -4817,9 +4817,9 @@
 23 193 -nan -nan -nan
 23 194 -nan -nan -nan
 23 195 -nan -nan -nan
-23 196 -nan -inf -nan
-23 197 -inf inf -inf
-23 198 inf -inf inf
+23 196 -nan -nan -nan
+23 197 -nan -nan -nan
+23 198 -nan -nan -nan
 23 199 -0.00311691 -0.00311691 -0.00311691
 
 24 0 0 0 -nan
@@ -5018,9 +5018,9 @@
 24 193 -nan -nan -nan
 24 194 -nan -nan -nan
 24 195 -nan -nan -nan
-24 196 -nan inf -nan
-24 197 inf -inf inf
-24 198 -inf inf -inf
+24 196 -nan -nan -nan
+24 197 -nan -nan -nan
+24 198 -nan -nan -nan
 24 199 -0.00157084 -0.00157084 -0.00157084
 
 25 0 0 0 -nan
@@ -5220,11 +5220,11 @@
 25 194 -nan -nan -nan
 25 195 -nan -nan -nan
 25 196 -nan -nan -nan
-25 197 -nan inf -nan
-25 198 inf -inf inf
-25 199 -1.53489e-18 -1.53489e-18 -1.53489e-18
+25 197 -nan -nan -nan
+25 198 -nan -nan -nan
+25 199 4.03102e-18 4.03102e-18 4.03102e-18
 
-26 0 -0 -0 -nan
+26 0 0 0 -nan
 26 1 -nan -nan -nan
 26 2 -nan -nan -nan
 26 3 -nan -nan -nan
@@ -5421,11 +5421,11 @@
 26 194 -nan -nan -nan
 26 195 -nan -nan -nan
 26 196 -nan -nan -nan
-26 197 -nan -inf -nan
-26 198 -inf inf -inf
+26 197 -nan -nan -nan
+26 198 -nan -nan -nan
 26 199 0.00157084 0.00157084 0.00157084
 
-27 0 -0 -0 -nan
+27 0 0 0 -nan
 27 1 -nan -nan -nan
 27 2 -nan -nan -nan
 27 3 -nan -nan -nan
@@ -5623,10 +5623,10 @@
 27 195 -nan -nan -nan
 27 196 -nan -nan -nan
 27 197 -nan -nan -nan
-27 198 -nan -inf -nan
+27 198 -nan -nan -nan
 27 199 0.00311691 0.00311691 0.00311691
 
-28 0 -0 -0 -nan
+28 0 0 0 -nan
 28 1 -nan -nan -nan
 28 2 -nan -nan -nan
 28 3 -nan -nan -nan
@@ -5827,7 +5827,7 @@
 28 198 -nan -nan -nan
 28 199 0.00461382 0.00461382 0.00461382
 
-29 0 -0 -0 -nan
+29 0 0 0 -nan
 29 1 -nan -nan -nan
 29 2 -nan -nan -nan
 29 3 -nan -nan -nan
@@ -6028,7 +6028,7 @@
 29 198 -nan -nan -nan
 29 199 0.00603797 0.00603797 0.00603797
 
-30 0 -0 -0 -nan
+30 0 0 0 -nan
 30 1 -nan -nan -nan
 30 2 -nan -nan -nan
 30 3 -nan -nan -nan
@@ -6229,7 +6229,7 @@
 30 198 -nan -nan -nan
 30 199 0.0073669 0.0073669 0.0073669
 
-31 0 -0 -0 -nan
+31 0 0 0 -nan
 31 1 -nan -nan -nan
 31 2 -nan -nan -nan
 31 3 -nan -nan -nan
@@ -6430,7 +6430,7 @@
 31 198 -nan -nan -nan
 31 199 0.00857965 0.00857965 0.00857965
 
-32 0 -0 -0 -nan
+32 0 0 0 -nan
 32 1 -nan -nan -nan
 32 2 -nan -nan -nan
 32 3 -nan -nan -nan
@@ -6631,7 +6631,7 @@
 32 198 -nan -nan -nan
 32 199 0.00965709 0.00965709 0.00965709
 
-33 0 -0 -0 -nan
+33 0 0 0 -nan
 33 1 -nan -nan -nan
 33 2 -nan -nan -nan
 33 3 -nan -nan -nan
@@ -6832,7 +6832,7 @@
 33 198 -nan -nan -nan
 33 199 0.0105822 0.0105822 0.0105822
 
-34 0 -0 -0 -nan
+34 0 0 0 -nan
 34 1 -nan -nan -nan
 34 2 -nan -nan -nan
 34 3 -nan -nan -nan
@@ -7033,7 +7033,7 @@
 34 198 -nan -nan -nan
 34 199 0.0113405 0.0113405 0.0113405
 
-35 0 -0 -0 -nan
+35 0 0 0 -nan
 35 1 -nan -nan -nan
 35 2 -nan -nan -nan
 35 3 -nan -nan -nan
@@ -7234,7 +7234,7 @@
 35 198 -nan -nan -nan
 35 199 0.0119199 0.0119199 0.0119199
 
-36 0 -0 -0 -nan
+36 0 0 0 -nan
 36 1 -nan -nan -nan
 36 2 -nan -nan -nan
 36 3 -nan -nan -nan
@@ -7435,7 +7435,7 @@
 36 198 -nan -nan -nan
 36 199 0.0123113 0.0123113 0.0123113
 
-37 0 -0 -0 -nan
+37 0 0 0 -nan
 37 1 -nan -nan -nan
 37 2 -nan -nan -nan
 37 3 -nan -nan -nan
@@ -7636,7 +7636,7 @@
 37 198 -nan -nan -nan
 37 199 0.0125086 0.0125086 0.0125086
 
-38 0 -0 -0 -nan
+38 0 0 0 -nan
 38 1 -nan -nan -nan
 38 2 -nan -nan -nan
 38 3 -nan -nan -nan
@@ -7837,7 +7837,7 @@
 38 198 -nan -nan -nan
 38 199 0.0125086 0.0125086 0.0125086
 
-39 0 -0 -0 -nan
+39 0 0 0 -nan
 39 1 -nan -nan -nan
 39 2 -nan -nan -nan
 39 3 -nan -nan -nan
@@ -8038,7 +8038,7 @@
 39 198 -nan -nan -nan
 39 199 0.0123113 0.0123113 0.0123113
 
-40 0 -0 -0 -nan
+40 0 0 0 -nan
 40 1 -nan -nan -nan
 40 2 -nan -nan -nan
 40 3 -nan -nan -nan
@@ -8239,7 +8239,7 @@
 40 198 -nan -nan -nan
 40 199 0.0119199 0.0119199 0.0119199
 
-41 0 -0 -0 -nan
+41 0 0 0 -nan
 41 1 -nan -nan -nan
 41 2 -nan -nan -nan
 41 3 -nan -nan -nan
@@ -8440,7 +8440,7 @@
 41 198 -nan -nan -nan
 41 199 0.0113405 0.0113405 0.0113405
 
-42 0 -0 -0 -nan
+42 0 0 0 -nan
 42 1 -nan -nan -nan
 42 2 -nan -nan -nan
 42 3 -nan -nan -nan
@@ -8641,7 +8641,7 @@
 42 198 -nan -nan -nan
 42 199 0.0105822 0.0105822 0.0105822
 
-43 0 -0 -0 -nan
+43 0 0 0 -nan
 43 1 -nan -nan -nan
 43 2 -nan -nan -nan
 43 3 -nan -nan -nan
@@ -8842,7 +8842,7 @@
 43 198 -nan -nan -nan
 43 199 0.00965709 0.00965709 0.00965709
 
-44 0 -0 -0 -nan
+44 0 0 0 -nan
 44 1 -nan -nan -nan
 44 2 -nan -nan -nan
 44 3 -nan -nan -nan
@@ -9043,7 +9043,7 @@
 44 198 -nan -nan -nan
 44 199 0.00857965 0.00857965 0.00857965
 
-45 0 -0 -0 -nan
+45 0 0 0 -nan
 45 1 -nan -nan -nan
 45 2 -nan -nan -nan
 45 3 -nan -nan -nan
@@ -9244,7 +9244,7 @@
 45 198 -nan -nan -nan
 45 199 0.0073669 0.0073669 0.0073669
 
-46 0 -0 -0 -nan
+46 0 0 0 -nan
 46 1 -nan -nan -nan
 46 2 -nan -nan -nan
 46 3 -nan -nan -nan
@@ -9445,7 +9445,7 @@
 46 198 -nan -nan -nan
 46 199 0.00603797 0.00603797 0.00603797
 
-47 0 -0 -0 -nan
+47 0 0 0 -nan
 47 1 -nan -nan -nan
 47 2 -nan -nan -nan
 47 3 -nan -nan -nan
@@ -9646,7 +9646,7 @@
 47 198 -nan -nan -nan
 47 199 0.00461382 0.00461382 0.00461382
 
-48 0 -0 -0 -nan
+48 0 0 0 -nan
 48 1 -nan -nan -nan
 48 2 -nan -nan -nan
 48 3 -nan -nan -nan
@@ -9847,7 +9847,7 @@
 48 198 -nan -nan -nan
 48 199 0.00311691 0.00311691 0.00311691
 
-49 0 -0 -0 -nan
+49 0 0 0 -nan
 49 1 -nan -nan -nan
 49 2 -nan -nan -nan
 49 3 -nan -nan -nan
@@ -10048,7 +10048,7 @@
 49 198 -nan -nan -nan
 49 199 0.00157084 0.00157084 0.00157084
 
-50 0 -0 -0 -nan
+50 0 0 0 -nan
 50 1 -nan -nan -nan
 50 2 -nan -nan -nan
 50 3 -nan -nan -nan
@@ -10247,7 +10247,7 @@
 50 196 -nan -nan -nan
 50 197 -nan -nan -nan
 50 198 -nan -nan -nan
-50 199 3.06978e-18 3.06978e-18 3.06978e-18
+50 199 -8.06205e-18 -8.06205e-18 -8.06205e-18
 
 51 0 0 0 -nan
 51 1 -nan -nan -nan
@@ -15274,7 +15274,7 @@
 75 198 -nan -nan -nan
 75 199 -4.60467e-18 -4.60467e-18 -4.60467e-18
 
-76 0 -0 -0 -nan
+76 0 0 0 -nan
 76 1 -nan -nan -nan
 76 2 -nan -nan -nan
 76 3 -nan -nan -nan
@@ -15475,7 +15475,7 @@
 76 198 -nan -nan -nan
 76 199 0.00157084 0.00157084 0.00157084
 
-77 0 -0 -0 -nan
+77 0 0 0 -nan
 77 1 -nan -nan -nan
 77 2 -nan -nan -nan
 77 3 -nan -nan -nan
@@ -15676,7 +15676,7 @@
 77 198 -nan -nan -nan
 77 199 0.00311691 0.00311691 0.00311691
 
-78 0 -0 -0 -nan
+78 0 0 0 -nan
 78 1 -nan -nan -nan
 78 2 -nan -nan -nan
 78 3 -nan -nan -nan
@@ -15877,7 +15877,7 @@
 78 198 -nan -nan -nan
 78 199 0.00461382 0.00461382 0.00461382
 
-79 0 -0 -0 -nan
+79 0 0 0 -nan
 79 1 -nan -nan -nan
 79 2 -nan -nan -nan
 79 3 -nan -nan -nan
@@ -16078,7 +16078,7 @@
 79 198 -nan -nan -nan
 79 199 0.00603797 0.00603797 0.00603797
 
-80 0 -0 -0 -nan
+80 0 0 0 -nan
 80 1 -nan -nan -nan
 80 2 -nan -nan -nan
 80 3 -nan -nan -nan
@@ -16279,7 +16279,7 @@
 80 198 -nan -nan -nan
 80 199 0.0073669 0.0073669 0.0073669
 
-81 0 -0 -0 -nan
+81 0 0 0 -nan
 81 1 -nan -nan -nan
 81 2 -nan -nan -nan
 81 3 -nan -nan -nan
@@ -16480,7 +16480,7 @@
 81 198 -nan -nan -nan
 81 199 0.00857965 0.00857965 0.00857965
 
-82 0 -0 -0 -nan
+82 0 0 0 -nan
 82 1 -nan -nan -nan
 82 2 -nan -nan -nan
 82 3 -nan -nan -nan
@@ -16681,7 +16681,7 @@
 82 198 -nan -nan -nan
 82 199 0.00965709 0.00965709 0.00965709
 
-83 0 -0 -0 -nan
+83 0 0 0 -nan
 83 1 -nan -nan -nan
 83 2 -nan -nan -nan
 83 3 -nan -nan -nan
@@ -16882,7 +16882,7 @@
 83 198 -nan -nan -nan
 83 199 0.0105822 0.0105822 0.0105822
 
-84 0 -0 -0 -nan
+84 0 0 0 -nan
 84 1 -nan -nan -nan
 84 2 -nan -nan -nan
 84 3 -nan -nan -nan
@@ -17083,7 +17083,7 @@
 84 198 -nan -nan -nan
 84 199 0.0113405 0.0113405 0.0113405
 
-85 0 -0 -0 -nan
+85 0 0 0 -nan
 85 1 -nan -nan -nan
 85 2 -nan -nan -nan
 85 3 -nan -nan -nan
@@ -17284,7 +17284,7 @@
 85 198 -nan -nan -nan
 85 199 0.0119199 0.0119199 0.0119199
 
-86 0 -0 -0 -nan
+86 0 0 0 -nan
 86 1 -nan -nan -nan
 86 2 -nan -nan -nan
 86 3 -nan -nan -nan
@@ -17485,7 +17485,7 @@
 86 198 -nan -nan -nan
 86 199 0.0123113 0.0123113 0.0123113
 
-87 0 -0 -0 -nan
+87 0 0 0 -nan
 87 1 -nan -nan -nan
 87 2 -nan -nan -nan
 87 3 -nan -nan -nan
@@ -17686,7 +17686,7 @@
 87 198 -nan -nan -nan
 87 199 0.0125086 0.0125086 0.0125086
 
-88 0 -0 -0 -nan
+88 0 0 0 -nan
 88 1 -nan -nan -nan
 88 2 -nan -nan -nan
 88 3 -nan -nan -nan
@@ -17887,7 +17887,7 @@
 88 198 -nan -nan -nan
 88 199 0.0125086 0.0125086 0.0125086
 
-89 0 -0 -0 -nan
+89 0 0 0 -nan
 89 1 -nan -nan -nan
 89 2 -nan -nan -nan
 89 3 -nan -nan -nan
@@ -18088,7 +18088,7 @@
 89 198 -nan -nan -nan
 89 199 0.0123113 0.0123113 0.0123113
 
-90 0 -0 -0 -nan
+90 0 0 0 -nan
 90 1 -nan -nan -nan
 90 2 -nan -nan -nan
 90 3 -nan -nan -nan
@@ -18289,7 +18289,7 @@
 90 198 -nan -nan -nan
 90 199 0.0119199 0.0119199 0.0119199
 
-91 0 -0 -0 -nan
+91 0 0 0 -nan
 91 1 -nan -nan -nan
 91 2 -nan -nan -nan
 91 3 -nan -nan -nan
@@ -18490,7 +18490,7 @@
 91 198 -nan -nan -nan
 91 199 0.0113405 0.0113405 0.0113405
 
-92 0 -0 -0 -nan
+92 0 0 0 -nan
 92 1 -nan -nan -nan
 92 2 -nan -nan -nan
 92 3 -nan -nan -nan
@@ -18691,7 +18691,7 @@
 92 198 -nan -nan -nan
 92 199 0.0105822 0.0105822 0.0105822
 
-93 0 -0 -0 -nan
+93 0 0 0 -nan
 93 1 -nan -nan -nan
 93 2 -nan -nan -nan
 93 3 -nan -nan -nan
@@ -18892,7 +18892,7 @@
 93 198 -nan -nan -nan
 93 199 0.00965709 0.00965709 0.00965709
 
-94 0 -0 -0 -nan
+94 0 0 0 -nan
 94 1 -nan -nan -nan
 94 2 -nan -nan -nan
 94 3 -nan -nan -nan
@@ -19093,7 +19093,7 @@
 94 198 -nan -nan -nan
 94 199 0.00857965 0.00857965 0.00857965
 
-95 0 -0 -0 -nan
+95 0 0 0 -nan
 95 1 -nan -nan -nan
 95 2 -nan -nan -nan
 95 3 -nan -nan -nan
@@ -19294,7 +19294,7 @@
 95 198 -nan -nan -nan
 95 199 0.0073669 0.0073669 0.0073669
 
-96 0 -0 -0 -nan
+96 0 0 0 -nan
 96 1 -nan -nan -nan
 96 2 -nan -nan -nan
 96 3 -nan -nan -nan
@@ -19495,7 +19495,7 @@
 96 198 -nan -nan -nan
 96 199 0.00603797 0.00603797 0.00603797
 
-97 0 -0 -0 -nan
+97 0 0 0 -nan
 97 1 -nan -nan -nan
 97 2 -nan -nan -nan
 97 3 -nan -nan -nan
@@ -19696,7 +19696,7 @@
 97 198 -nan -nan -nan
 97 199 0.00461382 0.00461382 0.00461382
 
-98 0 -0 -0 -nan
+98 0 0 0 -nan
 98 1 -nan -nan -nan
 98 2 -nan -nan -nan
 98 3 -nan -nan -nan
@@ -19897,7 +19897,7 @@
 98 198 -nan -nan -nan
 98 199 0.00311691 0.00311691 0.00311691
 
-99 0 -0 -0 -nan
+99 0 0 0 -nan
 99 1 -nan -nan -nan
 99 2 -nan -nan -nan
 99 3 -nan -nan -nan
@@ -20098,7 +20098,7 @@
 99 198 -nan -nan -nan
 99 199 0.00157084 0.00157084 0.00157084
 
-100 0 -0 -0 -nan
+100 0 0 0 -nan
 100 1 -nan -nan -nan
 100 2 -nan -nan -nan
 100 3 -nan -nan -nan
@@ -20297,7 +20297,7 @@
 100 196 -nan -nan -nan
 100 197 -nan -nan -nan
 100 198 -nan -nan -nan
-100 199 6.13956e-18 6.13956e-18 6.13956e-18
+100 199 -1.61241e-17 -1.61241e-17 -1.61241e-17
 
 101 0 0 0 -nan
 101 1 -nan -nan -nan
@@ -25322,9 +25322,9 @@
 125 196 -nan -nan -nan
 125 197 -nan -nan -nan
 125 198 -nan -nan -nan
-125 199 -2.99381e-17 -2.99381e-17 -2.99381e-17
+125 199 1.45892e-17 1.45892e-17 1.45892e-17
 
-126 0 -0 -0 -nan
+126 0 0 0 -nan
 126 1 -nan -nan -nan
 126 2 -nan -nan -nan
 126 3 -nan -nan -nan
@@ -25525,7 +25525,7 @@
 126 198 -nan -nan -nan
 126 199 0.00157084 0.00157084 0.00157084
 
-127 0 -0 -0 -nan
+127 0 0 0 -nan
 127 1 -nan -nan -nan
 127 2 -nan -nan -nan
 127 3 -nan -nan -nan
@@ -25726,7 +25726,7 @@
 127 198 -nan -nan -nan
 127 199 0.00311691 0.00311691 0.00311691
 
-128 0 -0 -0 -nan
+128 0 0 0 -nan
 128 1 -nan -nan -nan
 128 2 -nan -nan -nan
 128 3 -nan -nan -nan
@@ -25927,7 +25927,7 @@
 128 198 -nan -nan -nan
 128 199 0.00461382 0.00461382 0.00461382
 
-129 0 -0 -0 -nan
+129 0 0 0 -nan
 129 1 -nan -nan -nan
 129 2 -nan -nan -nan
 129 3 -nan -nan -nan
@@ -26128,7 +26128,7 @@
 129 198 -nan -nan -nan
 129 199 0.00603797 0.00603797 0.00603797
 
-130 0 -0 -0 -nan
+130 0 0 0 -nan
 130 1 -nan -nan -nan
 130 2 -nan -nan -nan
 130 3 -nan -nan -nan
@@ -26329,7 +26329,7 @@
 130 198 -nan -nan -nan
 130 199 0.0073669 0.0073669 0.0073669
 
-131 0 -0 -0 -nan
+131 0 0 0 -nan
 131 1 -nan -nan -nan
 131 2 -nan -nan -nan
 131 3 -nan -nan -nan
@@ -26530,7 +26530,7 @@
 131 198 -nan -nan -nan
 131 199 0.00857965 0.00857965 0.00857965
 
-132 0 -0 -0 -nan
+132 0 0 0 -nan
 132 1 -nan -nan -nan
 132 2 -nan -nan -nan
 132 3 -nan -nan -nan
@@ -26731,7 +26731,7 @@
 132 198 -nan -nan -nan
 132 199 0.00965709 0.00965709 0.00965709
 
-133 0 -0 -0 -nan
+133 0 0 0 -nan
 133 1 -nan -nan -nan
 133 2 -nan -nan -nan
 133 3 -nan -nan -nan
@@ -26932,7 +26932,7 @@
 133 198 -nan -nan -nan
 133 199 0.0105822 0.0105822 0.0105822
 
-134 0 -0 -0 -nan
+134 0 0 0 -nan
 134 1 -nan -nan -nan
 134 2 -nan -nan -nan
 134 3 -nan -nan -nan
@@ -27133,7 +27133,7 @@
 134 198 -nan -nan -nan
 134 199 0.0113405 0.0113405 0.0113405
 
-135 0 -0 -0 -nan
+135 0 0 0 -nan
 135 1 -nan -nan -nan
 135 2 -nan -nan -nan
 135 3 -nan -nan -nan
@@ -27334,7 +27334,7 @@
 135 198 -nan -nan -nan
 135 199 0.0119199 0.0119199 0.0119199
 
-136 0 -0 -0 -nan
+136 0 0 0 -nan
 136 1 -nan -nan -nan
 136 2 -nan -nan -nan
 136 3 -nan -nan -nan
@@ -27535,7 +27535,7 @@
 136 198 -nan -nan -nan
 136 199 0.0123113 0.0123113 0.0123113
 
-137 0 -0 -0 -nan
+137 0 0 0 -nan
 137 1 -nan -nan -nan
 137 2 -nan -nan -nan
 137 3 -nan -nan -nan
@@ -27736,7 +27736,7 @@
 137 198 -nan -nan -nan
 137 199 0.0125086 0.0125086 0.0125086
 
-138 0 -0 -0 -nan
+138 0 0 0 -nan
 138 1 -nan -nan -nan
 138 2 -nan -nan -nan
 138 3 -nan -nan -nan
@@ -27937,7 +27937,7 @@
 138 198 -nan -nan -nan
 138 199 0.0125086 0.0125086 0.0125086
 
-139 0 -0 -0 -nan
+139 0 0 0 -nan
 139 1 -nan -nan -nan
 139 2 -nan -nan -nan
 139 3 -nan -nan -nan
@@ -28138,7 +28138,7 @@
 139 198 -nan -nan -nan
 139 199 0.0123113 0.0123113 0.0123113
 
-140 0 -0 -0 -nan
+140 0 0 0 -nan
 140 1 -nan -nan -nan
 140 2 -nan -nan -nan
 140 3 -nan -nan -nan
@@ -28339,7 +28339,7 @@
 140 198 -nan -nan -nan
 140 199 0.0119199 0.0119199 0.0119199
 
-141 0 -0 -0 -nan
+141 0 0 0 -nan
 141 1 -nan -nan -nan
 141 2 -nan -nan -nan
 141 3 -nan -nan -nan
@@ -28540,7 +28540,7 @@
 141 198 -nan -nan -nan
 141 199 0.0113405 0.0113405 0.0113405
 
-142 0 -0 -0 -nan
+142 0 0 0 -nan
 142 1 -nan -nan -nan
 142 2 -nan -nan -nan
 142 3 -nan -nan -nan
@@ -28741,7 +28741,7 @@
 142 198 -nan -nan -nan
 142 199 0.0105822 0.0105822 0.0105822
 
-143 0 -0 -0 -nan
+143 0 0 0 -nan
 143 1 -nan -nan -nan
 143 2 -nan -nan -nan
 143 3 -nan -nan -nan
@@ -28942,7 +28942,7 @@
 143 198 -nan -nan -nan
 143 199 0.00965709 0.00965709 0.00965709
 
-144 0 -0 -0 -nan
+144 0 0 0 -nan
 144 1 -nan -nan -nan
 144 2 -nan -nan -nan
 144 3 -nan -nan -nan
@@ -29143,7 +29143,7 @@
 144 198 -nan -nan -nan
 144 199 0.00857965 0.00857965 0.00857965
 
-145 0 -0 -0 -nan
+145 0 0 0 -nan
 145 1 -nan -nan -nan
 145 2 -nan -nan -nan
 145 3 -nan -nan -nan
@@ -29344,7 +29344,7 @@
 145 198 -nan -nan -nan
 145 199 0.0073669 0.0073669 0.0073669
 
-146 0 -0 -0 -nan
+146 0 0 0 -nan
 146 1 -nan -nan -nan
 146 2 -nan -nan -nan
 146 3 -nan -nan -nan
@@ -29545,7 +29545,7 @@
 146 198 -nan -nan -nan
 146 199 0.00603797 0.00603797 0.00603797
 
-147 0 -0 -0 -nan
+147 0 0 0 -nan
 147 1 -nan -nan -nan
 147 2 -nan -nan -nan
 147 3 -nan -nan -nan
@@ -29746,7 +29746,7 @@
 147 198 -nan -nan -nan
 147 199 0.00461382 0.00461382 0.00461382
 
-148 0 -0 -0 -nan
+148 0 0 0 -nan
 148 1 -nan -nan -nan
 148 2 -nan -nan -nan
 148 3 -nan -nan -nan
@@ -29947,7 +29947,7 @@
 148 198 -nan -nan -nan
 148 199 0.00311691 0.00311691 0.00311691
 
-149 0 -0 -0 -nan
+149 0 0 0 -nan
 149 1 -nan -nan -nan
 149 2 -nan -nan -nan
 149 3 -nan -nan -nan
@@ -30148,7 +30148,7 @@
 149 198 -nan -nan -nan
 149 199 0.00157084 0.00157084 0.00157084
 
-150 0 -0 -0 -nan
+150 0 0 0 -nan
 150 1 -nan -nan -nan
 150 2 -nan -nan -nan
 150 3 -nan -nan -nan
@@ -35173,8 +35173,8 @@
 174 198 -nan -nan -nan
 174 199 -0.00157084 -0.00157084 -0.00157084
 
-175 0 0 0 -nan
-175 1 -nan -nan -nan
+175 0 0 0 inf
+175 1 -inf -nan -nan
 175 2 -nan -nan -nan
 175 3 -nan -nan -nan
 175 4 -nan -nan -nan
@@ -35372,11 +35372,11 @@
 175 196 -nan -nan -nan
 175 197 -nan -nan -nan
 175 198 -nan -nan -nan
-175 199 -5.52715e-17 -5.52715e-17 -5.52715e-17
+175 199 3.37831e-17 3.37831e-17 3.37831e-17
 
-176 0 -0 -0 -nan
-176 1 -nan -nan -nan
-176 2 -nan -nan -nan
+176 0 0 0 -inf
+176 1 inf -inf inf
+176 2 -inf -nan -nan
 176 3 -nan -nan -nan
 176 4 -nan -nan -nan
 176 5 -nan -nan -nan
@@ -35575,10 +35575,10 @@
 176 198 -nan -nan -nan
 176 199 0.00157084 0.00157084 0.00157084
 
-177 0 -0 -0 -nan
-177 1 -nan -nan -nan
-177 2 -nan -nan -nan
-177 3 -nan -nan -nan
+177 0 0 0 inf
+177 1 -inf inf -inf
+177 2 inf -inf inf
+177 3 -inf -nan -nan
 177 4 -nan -nan -nan
 177 5 -nan -nan -nan
 177 6 -nan -nan -nan
@@ -35776,11 +35776,11 @@
 177 198 -nan -nan -nan
 177 199 0.00311691 0.00311691 0.00311691
 
-178 0 -0 -0 -nan
-178 1 -nan -nan -nan
-178 2 -nan -nan -nan
-178 3 -nan -nan -nan
-178 4 -nan -nan -nan
+178 0 0 0 -inf
+178 1 inf -inf inf
+178 2 -inf inf -inf
+178 3 inf -inf inf
+178 4 -inf -nan -nan
 178 5 -nan -nan -nan
 178 6 -nan -nan -nan
 178 7 -nan -nan -nan
@@ -35977,12 +35977,12 @@
 178 198 -nan -nan -nan
 178 199 0.00461382 0.00461382 0.00461382
 
-179 0 -0 -0 -nan
-179 1 -nan -nan -nan
-179 2 -nan -nan -nan
-179 3 -nan -nan -nan
-179 4 -nan -nan -nan
-179 5 -nan -nan -nan
+179 0 0 0 inf
+179 1 -inf inf -inf
+179 2 inf -inf inf
+179 3 -inf inf -inf
+179 4 inf -inf inf
+179 5 -inf -nan -nan
 179 6 -nan -nan -nan
 179 7 -nan -nan -nan
 179 8 -nan -nan -nan
@@ -36178,12 +36178,12 @@
 179 198 -nan -nan -nan
 179 199 0.00603797 0.00603797 0.00603797
 
-180 0 -0 -0 -nan
-180 1 -nan -nan -nan
-180 2 -nan -nan -nan
-180 3 -nan -nan -nan
-180 4 -nan -nan -nan
-180 5 -nan -nan -nan
+180 0 0 0 -inf
+180 1 inf -inf inf
+180 2 -inf inf -inf
+180 3 inf -inf inf
+180 4 -inf inf -inf
+180 5 inf -inf -nan
 180 6 -nan -nan -nan
 180 7 -nan -nan -nan
 180 8 -nan -nan -nan
@@ -36379,12 +36379,12 @@
 180 198 -nan -nan -nan
 180 199 0.0073669 0.0073669 0.0073669
 
-181 0 -0 -0 -nan
-181 1 -nan -nan -nan
-181 2 -nan -nan -nan
-181 3 -nan -nan -nan
-181 4 -nan -nan -nan
-181 5 -nan -nan -nan
+181 0 0 0 inf
+181 1 -inf inf -inf
+181 2 inf -inf inf
+181 3 -inf inf -inf
+181 4 inf -inf inf
+181 5 -inf inf -nan
 181 6 -nan -nan -nan
 181 7 -nan -nan -nan
 181 8 -nan -nan -nan
@@ -36580,12 +36580,12 @@
 181 198 -nan -nan -nan
 181 199 0.00857965 0.00857965 0.00857965
 
-182 0 -0 -0 -nan
-182 1 -nan -nan -nan
-182 2 -nan -nan -nan
-182 3 -nan -nan -nan
-182 4 -nan -nan -nan
-182 5 -nan -nan -nan
+182 0 0 0 -inf
+182 1 inf -inf inf
+182 2 -inf inf -inf
+182 3 inf -inf inf
+182 4 -inf inf -inf
+182 5 inf -inf -nan
 182 6 -nan -nan -nan
 182 7 -nan -nan -nan
 182 8 -nan -nan -nan
@@ -36781,12 +36781,12 @@
 182 198 -nan -nan -nan
 182 199 0.00965709 0.00965709 0.00965709
 
-183 0 -0 -0 -nan
-183 1 -nan -nan -nan
-183 2 -nan -nan -nan
-183 3 -nan -nan -nan
-183 4 -nan -nan -nan
-183 5 -nan -nan -nan
+183 0 0 0 inf
+183 1 -inf inf -inf
+183 2 inf -inf inf
+183 3 -inf inf -inf
+183 4 inf -inf inf
+183 5 -inf inf -nan
 183 6 -nan -nan -nan
 183 7 -nan -nan -nan
 183 8 -nan -nan -nan
@@ -36982,11 +36982,11 @@
 183 198 -nan -nan -nan
 183 199 0.0105822 0.0105822 0.0105822
 
-184 0 -0 -0 -nan
-184 1 -nan -nan -nan
-184 2 -nan -nan -nan
-184 3 -nan -nan -nan
-184 4 -nan -nan -nan
+184 0 0 0 -inf
+184 1 inf -inf inf
+184 2 -inf inf -inf
+184 3 inf -inf inf
+184 4 -inf inf -nan
 184 5 -nan -nan -nan
 184 6 -nan -nan -nan
 184 7 -nan -nan -nan
@@ -37183,11 +37183,11 @@
 184 198 -nan -nan -nan
 184 199 0.0113405 0.0113405 0.0113405
 
-185 0 -0 -0 -nan
-185 1 -nan -nan -nan
-185 2 -nan -nan -nan
-185 3 -nan -nan -nan
-185 4 -nan -nan -nan
+185 0 0 0 inf
+185 1 -inf inf -inf
+185 2 inf -inf inf
+185 3 -inf inf -inf
+185 4 inf -inf -nan
 185 5 -nan -nan -nan
 185 6 -nan -nan -nan
 185 7 -nan -nan -nan
@@ -37384,10 +37384,10 @@
 185 198 -nan -nan -nan
 185 199 0.0119199 0.0119199 0.0119199
 
-186 0 -0 -0 -nan
-186 1 -nan -nan -nan
-186 2 -nan -nan -nan
-186 3 -nan -nan -nan
+186 0 0 0 -inf
+186 1 inf -inf inf
+186 2 -inf inf -inf
+186 3 inf -inf -nan
 186 4 -nan -nan -nan
 186 5 -nan -nan -nan
 186 6 -nan -nan -nan
@@ -37582,13 +37582,13 @@
 186 195 -nan -nan -nan
 186 196 -nan -nan -nan
 186 197 -nan -nan -nan
-186 198 -nan -inf -nan
+186 198 -nan -nan -nan
 186 199 0.0123113 0.0123113 0.0123113
 
-187 0 -0 -0 -nan
-187 1 -nan -nan -nan
-187 2 -nan -nan -nan
-187 3 -nan -nan -nan
+187 0 0 0 inf
+187 1 -inf inf -inf
+187 2 inf -inf inf
+187 3 -inf inf -nan
 187 4 -nan -nan -nan
 187 5 -nan -nan -nan
 187 6 -nan -nan -nan
@@ -37783,12 +37783,12 @@
 187 195 -nan -nan -nan
 187 196 -nan -nan -nan
 187 197 -nan -nan -nan
-187 198 -inf inf -inf
+187 198 -nan -nan -nan
 187 199 0.0125086 0.0125086 0.0125086
 
-188 0 -0 -0 -nan
-188 1 -nan -nan -nan
-188 2 -nan -nan -nan
+188 0 0 0 -inf
+188 1 inf -inf inf
+188 2 -inf inf -nan
 188 3 -nan -nan -nan
 188 4 -nan -nan -nan
 188 5 -nan -nan -nan
@@ -37983,13 +37983,13 @@
 188 194 -nan -nan -nan
 188 195 -nan -nan -nan
 188 196 -nan -nan -nan
-188 197 -nan inf -nan
-188 198 inf -inf inf
+188 197 -nan -nan -nan
+188 198 -nan -nan -nan
 188 199 0.0125086 0.0125086 0.0125086
 
-189 0 -0 -0 -nan
-189 1 -nan -nan -nan
-189 2 -nan -nan -nan
+189 0 0 0 inf
+189 1 -inf inf -inf
+189 2 inf -inf -nan
 189 3 -nan -nan -nan
 189 4 -nan -nan -nan
 189 5 -nan -nan -nan
@@ -38184,13 +38184,13 @@
 189 194 -nan -nan -nan
 189 195 -nan -nan -nan
 189 196 -nan -nan -nan
-189 197 -nan -inf -nan
-189 198 -inf inf -inf
+189 197 -nan -nan -nan
+189 198 -nan -nan -nan
 189 199 0.0123113 0.0123113 0.0123113
 
-190 0 -0 -0 -nan
-190 1 -nan -nan -nan
-190 2 -nan -nan -nan
+190 0 0 0 -inf
+190 1 inf -inf inf
+190 2 -inf inf -nan
 190 3 -nan -nan -nan
 190 4 -nan -nan -nan
 190 5 -nan -nan -nan
@@ -38385,13 +38385,13 @@
 190 194 -nan -nan -nan
 190 195 -nan -nan -nan
 190 196 -nan -nan -nan
-190 197 -nan inf -nan
-190 198 inf -inf inf
+190 197 -nan -nan -nan
+190 198 -nan -nan -nan
 190 199 0.0119199 0.0119199 0.0119199
 
-191 0 -0 -0 -nan
-191 1 -nan -nan -nan
-191 2 -nan -nan -nan
+191 0 0 0 inf
+191 1 -inf inf -inf
+191 2 inf -inf -nan
 191 3 -nan -nan -nan
 191 4 -nan -nan -nan
 191 5 -nan -nan -nan
@@ -38586,12 +38586,12 @@
 191 194 -nan -nan -nan
 191 195 -nan -nan -nan
 191 196 -nan -nan -nan
-191 197 -nan -inf -nan
-191 198 -inf inf -inf
+191 197 -nan -nan -nan
+191 198 -nan -nan -nan
 191 199 0.0113405 0.0113405 0.0113405
 
-192 0 -0 -0 -nan
-192 1 -nan -nan -nan
+192 0 0 0 -inf
+192 1 inf -inf -nan
 192 2 -nan -nan -nan
 192 3 -nan -nan -nan
 192 4 -nan -nan -nan
@@ -38787,12 +38787,12 @@
 192 194 -nan -nan -nan
 192 195 -nan -nan -nan
 192 196 -nan -nan -nan
-192 197 -inf inf -inf
+192 197 -nan -nan -nan
 192 198 inf -inf inf
 192 199 0.0105822 0.0105822 0.0105822
 
-193 0 -0 -0 -nan
-193 1 -nan -nan -nan
+193 0 0 0 inf
+193 1 -inf inf -nan
 193 2 -nan -nan -nan
 193 3 -nan -nan -nan
 193 4 -nan -nan -nan
@@ -38987,14 +38987,14 @@
 193 193 -nan -nan -nan
 193 194 -nan -nan -nan
 193 195 -nan -nan -nan
-193 196 -nan inf -nan
-193 197 inf -inf inf
+193 196 -nan -nan -nan
+193 197 -nan -inf -nan
 193 198 -inf inf -inf
 193 199 0.00965709 0.00965709 0.00965709
 
-194 0 -0 -0 -nan
-194 1 -nan -nan -nan
-194 2 -nan -nan -nan
+194 0 0 0 -inf
+194 1 inf -inf inf
+194 2 -inf -nan -nan
 194 3 -nan -nan -nan
 194 4 -nan -nan -nan
 194 5 -nan -nan -nan
@@ -39188,14 +39188,14 @@
 194 193 -nan -nan -nan
 194 194 -nan -nan -nan
 194 195 -nan -nan -nan
-194 196 -nan -inf -nan
+194 196 -nan -nan -nan
 194 197 -inf inf -inf
 194 198 inf -inf inf
 194 199 0.00857965 0.00857965 0.00857965
 
-195 0 -0 -0 -nan
-195 1 -nan -nan -nan
-195 2 -nan -nan -nan
+195 0 0 0 inf
+195 1 -inf inf -inf
+195 2 inf -inf -nan
 195 3 -nan -nan -nan
 195 4 -nan -nan -nan
 195 5 -nan -nan -nan
@@ -39389,14 +39389,14 @@
 195 193 -nan -nan -nan
 195 194 -nan -nan -nan
 195 195 -nan -nan -nan
-195 196 -inf inf -inf
+195 196 -nan inf -nan
 195 197 inf -inf inf
 195 198 -inf inf -inf
 195 199 0.0073669 0.0073669 0.0073669
 
-196 0 -0 -0 -nan
-196 1 -nan -nan -nan
-196 2 -nan -nan -nan
+196 0 0 0 -inf
+196 1 inf -inf inf
+196 2 -inf inf -nan
 196 3 -nan -nan -nan
 196 4 -nan -nan -nan
 196 5 -nan -nan -nan
@@ -39589,16 +39589,16 @@
 196 192 -nan -nan -nan
 196 193 -nan -nan -nan
 196 194 -nan -nan -nan
-196 195 -nan inf -nan
-196 196 inf -inf inf
+196 195 -nan -nan -nan
+196 196 -nan -inf -nan
 196 197 -inf inf -inf
 196 198 inf -inf inf
 196 199 0.00603797 0.00603797 0.00603797
 
-197 0 -0 -0 -nan
-197 1 -nan -nan -nan
-197 2 -nan -nan -nan
-197 3 -nan -nan -nan
+197 0 0 0 inf
+197 1 -inf inf -inf
+197 2 inf -inf inf
+197 3 -inf -nan -nan
 197 4 -nan -nan -nan
 197 5 -nan -nan -nan
 197 6 -nan -nan -nan
@@ -39790,16 +39790,16 @@
 197 192 -nan -nan -nan
 197 193 -nan -nan -nan
 197 194 -nan -nan -nan
-197 195 -nan -inf -nan
+197 195 -nan -nan -nan
 197 196 -inf inf -inf
 197 197 inf -inf inf
 197 198 -inf inf -inf
 197 199 0.00461382 0.00461382 0.00461382
 
-198 0 -0 -0 -nan
-198 1 -nan -nan -nan
-198 2 -nan -nan -nan
-198 3 -nan -nan -nan
+198 0 0 0 -inf
+198 1 inf -inf inf
+198 2 -inf inf -inf
+198 3 inf -inf -nan
 198 4 -nan -nan -nan
 198 5 -nan -nan -nan
 198 6 -nan -nan -nan
@@ -39997,7 +39997,7 @@
 198 198 inf -inf inf
 198 199 0.00311691 0.00311691 0.00311691
 
-199 0 -0 -0 -0
+199 0 0 0 0
 199 1 -0.00157084 -0.00157084 -0.00157084
 199 2 -0.00311691 -0.00311691 -0.00311691
 199 3 -0.00461382 -0.00461382 -0.00461382
@@ -40022,7 +40022,7 @@
 199 22 -0.00461382 -0.00461382 -0.00461382
 199 23 -0.00311691 -0.00311691 -0.00311691
 199 24 -0.00157084 -0.00157084 -0.00157084
-199 25 -1.53489e-18 -1.53489e-18 -1.53489e-18
+199 25 4.03102e-18 4.03102e-18 4.03102e-18
 199 26 0.00157084 0.00157084 0.00157084
 199 27 0.00311691 0.00311691 0.00311691
 199 28 0.00461382 0.00461382 0.00461382
@@ -40047,7 +40047,7 @@
 199 47 0.00461382 0.00461382 0.00461382
 199 48 0.00311691 0.00311691 0.00311691
 199 49 0.00157084 0.00157084 0.00157084
-199 50 3.06978e-18 3.06978e-18 3.06978e-18
+199 50 -8.06205e-18 -8.06205e-18 -8.06205e-18
 199 51 -0.00157084 -0.00157084 -0.00157084
 199 52 -0.00311691 -0.00311691 -0.00311691
 199 53 -0.00461382 -0.00461382 -0.00461382
@@ -40097,7 +40097,7 @@
 199 97 0.00461382 0.00461382 0.00461382
 199 98 0.00311691 0.00311691 0.00311691
 199 99 0.00157084 0.00157084 0.00157084
-199 100 6.13956e-18 6.13956e-18 6.13956e-18
+199 100 -1.61241e-17 -1.61241e-17 -1.61241e-17
 199 101 -0.00157084 -0.00157084 -0.00157084
 199 102 -0.00311691 -0.00311691 -0.00311691
 199 103 -0.00461382 -0.00461382 -0.00461382
@@ -40122,7 +40122,7 @@
 199 122 -0.00461382 -0.00461382 -0.00461382
 199 123 -0.00311691 -0.00311691 -0.00311691
 199 124 -0.00157084 -0.00157084 -0.00157084
-199 125 -2.99381e-17 -2.99381e-17 -2.99381e-17
+199 125 1.45892e-17 1.45892e-17 1.45892e-17
 199 126 0.00157084 0.00157084 0.00157084
 199 127 0.00311691 0.00311691 0.00311691
 199 128 0.00461382 0.00461382 0.00461382
@@ -40172,7 +40172,7 @@
 199 172 -0.00461382 -0.00461382 -0.00461382
 199 173 -0.00311691 -0.00311691 -0.00311691
 199 174 -0.00157084 -0.00157084 -0.00157084
-199 175 -5.52715e-17 -5.52715e-17 -5.52715e-17
+199 175 3.37831e-17 3.37831e-17 3.37831e-17
 199 176 0.00157084 0.00157084 0.00157084
 199 177 0.00311691 0.00311691 0.00311691
 199 178 0.00461382 0.00461382 0.00461382

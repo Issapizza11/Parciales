@@ -33362,7 +33362,7 @@
 165 196 -nan -nan -nan
 165 197 -nan -nan -nan
 165 198 -nan -nan -nan
-165 199 1.96641e-308 1.96641e-308 1.96641e-308
+165 199 0 0 0
 
 166 0 2.55826e-139 2.55826e-139 -nan
 166 1 -nan -nan -nan
@@ -33563,7 +33563,7 @@
 166 196 -nan -nan -nan
 166 197 -nan -nan -nan
 166 198 -nan -nan -nan
-166 199 1.93746e-310 1.93746e-310 1.93746e-310
+166 199 0 0 0
 
 167 0 2.42177e-141 2.42177e-141 -nan
 167 1 -nan -nan -nan
@@ -33764,7 +33764,7 @@
 167 196 -nan -nan -nan
 167 197 -nan -nan -nan
 167 198 -nan -nan -nan
-167 199 1.83409e-312 1.83409e-312 1.83409e-312
+167 199 0 0 0
 
 168 0 2.20267e-143 2.20267e-143 -nan
 168 1 -nan -nan -nan
@@ -33965,7 +33965,7 @@
 168 196 -nan -nan -nan
 168 197 -nan -nan -nan
 168 198 -nan -nan -nan
-168 199 1.66816e-314 1.66816e-314 1.66816e-314
+168 199 0 0 0
 
 169 0 1.92483e-145 1.92483e-145 -nan
 169 1 -nan -nan -nan
@@ -34166,7 +34166,7 @@
 169 196 -nan -nan -nan
 169 197 -nan -nan -nan
 169 198 -nan -nan -nan
-169 199 1.45774e-316 1.45774e-316 1.45774e-316
+169 199 0 0 0
 
 170 0 1.61609e-147 1.61609e-147 -nan
 170 1 -nan -nan -nan
@@ -34367,7 +34367,7 @@
 170 196 -nan -nan -nan
 170 197 -nan -nan -nan
 170 198 -nan -nan -nan
-170 199 1.22392e-318 1.22392e-318 1.22392e-318
+170 199 0 0 0
 
 171 0 1.30366e-149 1.30366e-149 -nan
 171 1 -nan -nan -nan
@@ -34568,7 +34568,7 @@
 171 196 -nan -nan -nan
 171 197 -nan -nan -nan
 171 198 -nan -nan -nan
-171 199 9.87143e-321 9.87143e-321 9.87143e-321
+171 199 0 0 0
 
 172 0 1.0104e-151 1.0104e-151 -nan
 172 1 -nan -nan -nan
@@ -34769,7 +34769,7 @@
 172 196 -nan -nan -nan
 172 197 -nan -nan -nan
 172 198 -nan -nan -nan
-172 199 7.41098e-323 7.41098e-323 7.41098e-323
+172 199 0 0 0
 
 173 0 7.52405e-154 7.52405e-154 -nan
 173 1 -nan -nan -nan
@@ -37180,7 +37180,7 @@
 184 195 -nan -nan -nan
 184 196 -nan -nan -nan
 184 197 -nan -nan -nan
-184 198 inf -inf inf
+184 198 -nan -nan -nan
 184 199 0 0 0
 
 185 0 9.65911e-181 9.65911e-181 -nan
@@ -37380,8 +37380,8 @@
 185 194 -nan -nan -nan
 185 195 -nan -nan -nan
 185 196 -nan -nan -nan
-185 197 inf -inf inf
-185 198 -inf inf -inf
+185 197 -nan -nan -nan
+185 198 -nan -nan -nan
 185 199 0 0 0
 
 186 0 4.27623e-183 4.27623e-183 -nan
@@ -37580,9 +37580,9 @@
 186 193 -nan -nan -nan
 186 194 -nan -nan -nan
 186 195 -nan -nan -nan
-186 196 inf -inf inf
-186 197 -inf inf -inf
-186 198 inf -inf inf
+186 196 -nan -nan -nan
+186 197 -nan -nan -nan
+186 198 -nan -nan -nan
 186 199 0 0 0
 
 187 0 1.81892e-185 1.81892e-185 -nan
@@ -37780,10 +37780,10 @@
 187 192 -nan -nan -nan
 187 193 -nan -nan -nan
 187 194 -nan -nan -nan
-187 195 inf -inf inf
-187 196 -inf inf -inf
-187 197 inf -inf inf
-187 198 -inf inf -inf
+187 195 -nan -nan -nan
+187 196 -nan -nan -nan
+187 197 -nan -nan -nan
+187 198 -nan -nan -nan
 187 199 0 0 0
 
 188 0 7.4335e-188 7.4335e-188 -nan
@@ -37980,11 +37980,11 @@
 188 191 -nan -nan -nan
 188 192 -nan -nan -nan
 188 193 -nan -nan -nan
-188 194 inf -inf inf
-188 195 -inf inf -inf
-188 196 inf -inf inf
-188 197 -inf inf -inf
-188 198 inf -inf inf
+188 194 -nan -nan -nan
+188 195 -nan -nan -nan
+188 196 -nan -nan -nan
+188 197 -nan -nan -nan
+188 198 -nan -nan -nan
 188 199 0 0 0
 
 189 0 2.91879e-190 2.91879e-190 -nan
@@ -38180,12 +38180,12 @@
 189 190 -nan -nan -nan
 189 191 -nan -nan -nan
 189 192 -nan -nan -nan
-189 193 inf -inf inf
-189 194 -inf inf -inf
-189 195 inf -inf inf
-189 196 -inf inf -inf
-189 197 inf -inf inf
-189 198 -inf inf -inf
+189 193 -nan -nan -nan
+189 194 -nan -nan -nan
+189 195 -nan -nan -nan
+189 196 -nan -nan -nan
+189 197 -nan -nan -nan
+189 198 -nan -nan -nan
 189 199 0 0 0
 
 190 0 1.10113e-192 1.10113e-192 -nan
@@ -38380,13 +38380,13 @@
 190 189 -nan -nan -nan
 190 190 -nan -nan -nan
 190 191 -nan -nan -nan
-190 192 inf -inf inf
-190 193 -inf inf -inf
-190 194 inf -inf inf
-190 195 -inf inf -inf
-190 196 inf -inf inf
-190 197 -inf inf -inf
-190 198 inf -inf inf
+190 192 -nan -nan -nan
+190 193 -nan -nan -nan
+190 194 -nan -nan -nan
+190 195 -nan -nan -nan
+190 196 -nan -nan -nan
+190 197 -nan -nan -nan
+190 198 -nan -nan -nan
 190 199 0 0 0
 
 191 0 3.9912e-195 3.9912e-195 -nan
@@ -38580,14 +38580,14 @@
 191 188 -nan -nan -nan
 191 189 -nan -nan -nan
 191 190 -nan -nan -nan
-191 191 inf -inf inf
-191 192 -inf inf -inf
-191 193 inf -inf inf
-191 194 -inf inf -inf
-191 195 inf -inf inf
-191 196 -inf inf -inf
-191 197 inf -inf inf
-191 198 -inf inf -inf
+191 191 -nan -nan -nan
+191 192 -nan -nan -nan
+191 193 -nan -nan -nan
+191 194 -nan -nan -nan
+191 195 -nan -nan -nan
+191 196 -nan -nan -nan
+191 197 -nan -nan -nan
+191 198 -nan -nan -nan
 191 199 0 0 0
 
 192 0 1.38994e-197 1.38994e-197 -nan
@@ -38780,15 +38780,15 @@
 192 187 -nan -nan -nan
 192 188 -nan -nan -nan
 192 189 -nan -nan -nan
-192 190 inf -inf inf
-192 191 -inf inf -inf
-192 192 inf -inf inf
-192 193 -inf inf -inf
-192 194 inf -inf inf
-192 195 -inf inf -inf
-192 196 inf -inf inf
-192 197 -inf inf -inf
-192 198 inf -inf inf
+192 190 -nan -nan -nan
+192 191 -nan -nan -nan
+192 192 -nan -nan -nan
+192 193 -nan -nan -nan
+192 194 -nan -nan -nan
+192 195 -nan -nan -nan
+192 196 -nan -nan -nan
+192 197 -nan -nan -nan
+192 198 -nan -nan -nan
 192 199 0 0 0
 
 193 0 4.6507e-200 4.6507e-200 -nan
@@ -38980,16 +38980,16 @@
 193 186 -nan -nan -nan
 193 187 -nan -nan -nan
 193 188 -nan -nan -nan
-193 189 inf -inf inf
-193 190 -inf inf -inf
-193 191 inf -inf inf
-193 192 -inf inf -inf
-193 193 inf -inf inf
-193 194 -inf inf -inf
-193 195 inf -inf inf
-193 196 -inf inf -inf
-193 197 inf -inf inf
-193 198 -inf inf -inf
+193 189 -nan -nan -nan
+193 190 -nan -nan -nan
+193 191 -nan -nan -nan
+193 192 -nan -nan -nan
+193 193 -nan -nan -nan
+193 194 -nan -nan -nan
+193 195 -nan -nan -nan
+193 196 -nan -nan -nan
+193 197 -nan -nan -nan
+193 198 -nan -nan -nan
 193 199 0 0 0
 
 194 0 1.49509e-202 1.49509e-202 -nan
@@ -39180,17 +39180,17 @@
 194 185 -nan -nan -nan
 194 186 -nan -nan -nan
 194 187 -nan -nan -nan
-194 188 inf -inf inf
-194 189 -inf inf -inf
-194 190 inf -inf inf
-194 191 -inf inf -inf
-194 192 inf -inf inf
-194 193 -inf inf -inf
-194 194 inf -inf inf
-194 195 -inf inf -inf
-194 196 inf -inf inf
-194 197 -inf inf -inf
-194 198 inf -inf inf
+194 188 -nan -nan -nan
+194 189 -nan -nan -nan
+194 190 -nan -nan -nan
+194 191 -nan -nan -nan
+194 192 -nan -nan -nan
+194 193 -nan -nan -nan
+194 194 -nan -nan -nan
+194 195 -nan -nan -nan
+194 196 -nan -nan -nan
+194 197 -nan -nan -nan
+194 198 -nan -nan -nan
 194 199 0 0 0
 
 195 0 4.61792e-205 4.61792e-205 -nan
@@ -39380,18 +39380,18 @@
 195 184 -nan -nan -nan
 195 185 -nan -nan -nan
 195 186 -nan -nan -nan
-195 187 inf -inf inf
-195 188 -inf inf -inf
-195 189 inf -inf inf
-195 190 -inf inf -inf
-195 191 inf -inf inf
-195 192 -inf inf -inf
-195 193 inf -inf inf
-195 194 -inf inf -inf
-195 195 inf -inf inf
-195 196 -inf inf -inf
-195 197 inf -inf inf
-195 198 -inf inf -inf
+195 187 -nan -nan -nan
+195 188 -nan -nan -nan
+195 189 -nan -nan -nan
+195 190 -nan -nan -nan
+195 191 -nan -nan -nan
+195 192 -nan -nan -nan
+195 193 -nan -nan -nan
+195 194 -nan -nan -nan
+195 195 -nan -nan -nan
+195 196 -nan -nan -nan
+195 197 -nan -nan -nan
+195 198 -nan -nan -nan
 195 199 0 0 0
 
 196 0 1.37042e-207 1.37042e-207 -nan
@@ -39580,19 +39580,19 @@
 196 183 -nan -nan -nan
 196 184 -nan -nan -nan
 196 185 -nan -nan -nan
-196 186 inf -inf inf
-196 187 -inf inf -inf
-196 188 inf -inf inf
-196 189 -inf inf -inf
-196 190 inf -inf inf
-196 191 -inf inf -inf
-196 192 inf -inf inf
-196 193 -inf inf -inf
-196 194 inf -inf inf
-196 195 -inf inf -inf
-196 196 inf -inf inf
-196 197 -inf inf -inf
-196 198 inf -inf inf
+196 186 -nan -nan -nan
+196 187 -nan -nan -nan
+196 188 -nan -nan -nan
+196 189 -nan -nan -nan
+196 190 -nan -nan -nan
+196 191 -nan -nan -nan
+196 192 -nan -nan -nan
+196 193 -nan -nan -nan
+196 194 -nan -nan -nan
+196 195 -nan -nan -nan
+196 196 -nan -nan -nan
+196 197 -nan -nan -nan
+196 198 -nan -nan -nan
 196 199 0 0 0
 
 197 0 3.90739e-210 3.90739e-210 -nan
@@ -39780,20 +39780,20 @@
 197 182 -nan -nan -nan
 197 183 -nan -nan -nan
 197 184 -nan -nan -nan
-197 185 inf -inf inf
-197 186 -inf inf -inf
-197 187 inf -inf inf
-197 188 -inf inf -inf
-197 189 inf -inf inf
-197 190 -inf inf -inf
-197 191 inf -inf inf
-197 192 -inf inf -inf
-197 193 inf -inf inf
-197 194 -inf inf -inf
-197 195 inf -inf inf
-197 196 -inf inf -inf
-197 197 inf -inf inf
-197 198 -inf inf -inf
+197 185 -nan -nan -nan
+197 186 -nan -nan -nan
+197 187 -nan -nan -nan
+197 188 -nan -nan -nan
+197 189 -nan -nan -nan
+197 190 -nan -nan -nan
+197 191 -nan -nan -nan
+197 192 -nan -nan -nan
+197 193 -nan -nan -nan
+197 194 -nan -nan -nan
+197 195 -nan -nan -nan
+197 196 -nan -nan -nan
+197 197 -nan -nan -nan
+197 198 -nan -nan -nan
 197 199 0 0 0
 
 198 0 1.07041e-212 1.07041e-212 -nan
@@ -39980,21 +39980,21 @@
 198 181 -nan -nan -nan
 198 182 -nan -nan -nan
 198 183 -nan -nan -nan
-198 184 inf -inf inf
-198 185 -inf inf -inf
-198 186 inf -inf inf
-198 187 -inf inf -inf
-198 188 inf -inf inf
-198 189 -inf inf -inf
-198 190 inf -inf inf
-198 191 -inf inf -inf
-198 192 inf -inf inf
-198 193 -inf inf -inf
-198 194 inf -inf inf
-198 195 -inf inf -inf
-198 196 inf -inf inf
-198 197 -inf inf -inf
-198 198 inf -inf inf
+198 184 -nan -nan -nan
+198 185 -nan -nan -nan
+198 186 -nan -nan -nan
+198 187 -nan -nan -nan
+198 188 -nan -nan -nan
+198 189 -nan -nan -nan
+198 190 -nan -nan -nan
+198 191 -nan -nan -nan
+198 192 -nan -nan -nan
+198 193 -nan -nan -nan
+198 194 -nan -nan -nan
+198 195 -nan -nan -nan
+198 196 -nan -nan -nan
+198 197 -nan -nan -nan
+198 198 -nan -nan -nan
 198 199 0 0 0
 
 199 0 2.81735e-215 2.81735e-215 2.81735e-215
@@ -40162,14 +40162,14 @@
 199 162 1.6172e-302 1.6172e-302 1.6172e-302
 199 163 1.79655e-304 1.79655e-304 1.79655e-304
 199 164 1.91753e-306 1.91753e-306 1.91753e-306
-199 165 1.96641e-308 1.96641e-308 1.96641e-308
-199 166 1.93746e-310 1.93746e-310 1.93746e-310
-199 167 1.83409e-312 1.83409e-312 1.83409e-312
-199 168 1.66816e-314 1.66816e-314 1.66816e-314
-199 169 1.45774e-316 1.45774e-316 1.45774e-316
-199 170 1.22392e-318 1.22392e-318 1.22392e-318
-199 171 9.87143e-321 9.87143e-321 9.87143e-321
-199 172 7.41098e-323 7.41098e-323 7.41098e-323
+199 165 0 0 0
+199 166 0 0 0
+199 167 0 0 0
+199 168 0 0 0
+199 169 0 0 0
+199 170 0 0 0
+199 171 0 0 0
+199 172 0 0 0
 199 173 0 0 0
 199 174 0 0 0
 199 175 0 0 0
