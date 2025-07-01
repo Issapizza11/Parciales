@@ -44,9 +44,9 @@ benchmark:
 	total=$(if $(TOTAL),$(TOTAL),10); \
 	for bin in $(BIN_LBM) $(BIN_FDTD); do \
 		if [ "$$bin" = "$(BIN_LBM)" ]; then \
-			mallas="10"; \
+			mallas="1000"; \
 		else \
-			mallas="500 2500 5000 7500"; \
+			mallas="5000"; \
 		fi; \
 		for m in $$mallas; do \
 			out="benchmark_$$bin-m$$m.csv"; \
